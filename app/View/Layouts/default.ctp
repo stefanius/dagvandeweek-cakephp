@@ -31,12 +31,10 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </a>
-	          <?php echo $this->Html->link('MyCompany', '/', array('class' => 'brand')); ?>
+	          <?php echo $this->Html->link('DagVanDeWeek', '/', array('class' => 'brand')); ?>
 	          <div class="container nav-collapse">
 	            <ul class="nav">
-	            	<li><?php echo $this->Html->link('Link1', '/link1'); ?></li>
-	                <li><?php echo $this->Html->link('Link2', '/link2'); ?></li>
-	                <li><?php echo $this->Html->link('Link3', '/link3'); ?></li>
+	            	<!--<li><?php echo $this->Html->link('Link1', '/link1'); ?></li> -->
 	            </ul>
 	          </div><!--/.nav-collapse -->
 	        </div>
@@ -50,13 +48,19 @@
                         <br/><br/><br/>
 	              <div class="well sidebar-nav">
                           
-	                <h3>Sidebar</h3>
+	                <h3>Pagina's</h3>
 	                <ul class="nav nav-list">
-	                  <li class="nav-header">Sidebar</li>
-	                  <li><?php echo $this->Html->link('Link1', '/link1'); ?></li>
-	                  <li><?php echo $this->Html->link('Link2', '/link2'); ?></li>
-	                  <li><?php echo $this->Html->link('Link3', '/link3'); ?></li>
+	                  <li class="nav-header">Is het al</li>
+	                  <li><?php echo $this->Html->link('Gehaktdag', '/gehaktdag'); ?></li>
+	                  <li><?php echo $this->Html->link('Bieruur', '/bieruur'); ?></li>
 	                </ul>
+                        
+	                <ul class="nav nav-list">
+	                  <li class="nav-header">Is het tijd voor</li>
+	                  <li><?php echo $this->Html->link('Zaagmans', '/zaagmans'); ?></li>
+	                </ul>
+                        
+                        
 	              </div><!--/.well -->
 	            </div><!--/span-->
 
