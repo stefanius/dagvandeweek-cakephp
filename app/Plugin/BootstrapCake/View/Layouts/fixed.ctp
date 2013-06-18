@@ -43,13 +43,11 @@
 	      </div>
 	    </div>
 
-	    <div class="container-fluid">
-	        <div class="row-fluid">
-                    
+	    <div class="container">
+	      <div class="content">
+	        <div class="row">
 	            <div class="span3">
-                        <br/><br/><br/>
 	              <div class="well sidebar-nav">
-                          
 	                <h3>Sidebar</h3>
 	                <ul class="nav nav-list">
 	                  <li class="nav-header">Sidebar</li>
@@ -61,14 +59,15 @@
 	            </div><!--/span-->
 
 	           	<div id="main-content" class="span9">
-                            <br/><br/><br/>
-                          
+
 					<?php echo $this->Session->flash(); ?>
 
 					<?php echo $this->fetch('content'); ?>
+
 	            </div><!--/span-->
 
 	        </div><!--/row-->
+	      </div><!--/content-->
 
 	      <footer>
 	        <p>&copy; MyCompany <?php echo date('Y'); ?></p>
