@@ -33,7 +33,7 @@ class CheckdayController extends AppController {
         
         $description = 'Woensdag Gehaktdag. Bekijk hier dagelijks of het al gehaktdag is. Elke woensdag is Gehaktdag op Dag Van De Week. Elke week weer een gehaktdag.';
         $robots = 'INDEX, FOLLOW';
-        $this->set(compact('zaagmansGeweest', 'description', 'robots'));
+        $this->set(compact('gehaktdag', 'description', 'robots'));
     }
 }
 
