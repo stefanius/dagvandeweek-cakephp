@@ -27,6 +27,7 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
         Router::connect('/zaagmans', array('controller' => 'checkday', 'action' => 'zaagmans'));
+        Router::connect('/gehaktdag', array('controller' => 'checkday', 'action' => 'gehaktdag'));
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
         
         
