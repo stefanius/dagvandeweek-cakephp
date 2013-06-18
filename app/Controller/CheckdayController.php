@@ -31,9 +31,15 @@ class CheckdayController extends AppController {
             $gehaktdag=true;
         }
         
+        if($daynumber <=3){
+            $countdown = 3-$daynumber;
+        }else{
+            $countdown = 4 + (6-$daynumber);
+        }
+        
         $description = 'Woensdag Gehaktdag. Bekijk hier dagelijks of het al gehaktdag is. Elke woensdag is Gehaktdag op Dag Van De Week. Elke week weer een gehaktdag.';
         $robots = 'INDEX, FOLLOW';
-        $this->set(compact('gehaktdag', 'description', 'robots'));
+        $this->set(compact('gehaktdag', 'description', 'robots', 'daynumber', 'countdown'));
     }
 }
 

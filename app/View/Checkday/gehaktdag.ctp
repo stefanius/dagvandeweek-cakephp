@@ -3,5 +3,5 @@
 <?php if($gehaktdag===true): ?>
     Vandaag is <strong>Woensdag Gehaktdag</strong>. Geniet ervan!
 <?php else: ?>
-    Helaas. Het is nog geen gehaktdag. U moet nog X dagen wachten.
+    Helaas. Het is nog geen gehaktdag. U moet nog <?php echo $countdown; ?> dagen wachten.
 <?php endif; ?>
