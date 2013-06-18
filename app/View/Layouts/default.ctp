@@ -4,7 +4,13 @@
 	    <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title><?php echo $title_for_layout; ?></title>
+            <?php
+            echo $this->Html->meta(
+                    'description',
+                    $description
+            );           
+            ?>
+            <title><?php echo $title_for_layout; ?></title>
 
 		<!--[if lt IE 9]>
       		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
