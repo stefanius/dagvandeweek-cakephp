@@ -5,10 +5,9 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <?php
-            echo $this->Html->meta(
-                    'description',
-                    $description
-            );           
+            echo $this->Html->meta('description',$description );                
+            echo $this->Html->meta(array('name' => 'robots', 'content' => $robots));            
+
             ?>
             <title><?php echo $title_for_layout; ?></title>
 
@@ -81,7 +80,7 @@
 	        </div><!--/row-->
 
 	      <footer>
-	        <p>&copy; MyCompany <?php echo date('Y'); ?></p>
+	        <p>&copy; DagVanDeWeek.nl <?php echo date('Y'); ?></p>
 	      </footer>
 
 	    </div> <!-- /container -->
