@@ -1,3 +1,3 @@
-<?php
+<h1> <?php echo $Content['Content']['title']; ?></h1>
 
-var_dump($Content);
+<?php echo $Content['Content']['pagecontent']; ?>

@@ -75,6 +75,13 @@
 					<?php echo $this->Session->flash(); ?>
 
 					<?php echo $this->fetch('content'); ?>
+                                        <?php 
+                                            if(isset($showwhatislink)){
+                                                if($showwhatislink===true){
+                                                    echo $this->element('watislink'); 
+                                                }                                                
+                                            }
+                                        ?>
 	            </div><!--/span-->
 	            <div class="span3">
                         <br/><br/><br/>
@@ -96,3 +103,4 @@
 
 	</body>
 </html>
+
