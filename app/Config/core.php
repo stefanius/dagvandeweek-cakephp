@@ -348,3 +348,4 @@ Cache::config('_cake_model_', array(
 ));
 
 date_default_timezone_set ( 'Europe/Amsterdam' );
+ setlocale (LC_TIME, "Dutch");
