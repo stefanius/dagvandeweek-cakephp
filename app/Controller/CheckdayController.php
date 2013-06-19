@@ -2,7 +2,6 @@
 class CheckdayController extends AppController {
     
     var $name = 'Checkday';
-    var $uses = array();
 
     function zaagmans(){
         $zaagmansGeweest = false;
