@@ -49,7 +49,7 @@
 	    <div class="container-fluid">
 	        <div class="row-fluid">
                     
-	            <div class="span3">
+	            <div class="span2">
                         <br/><br/><br/>
 	              <div class="well sidebar-nav">
                           
@@ -69,13 +69,22 @@
 	              </div><!--/.well -->
 	            </div><!--/span-->
 
-	           	<div id="main-content" class="span9">
+	           	<div id="main-content" class="span7">
                             <br/><br/><br/>
                           
 					<?php echo $this->Session->flash(); ?>
 
 					<?php echo $this->fetch('content'); ?>
 	            </div><!--/span-->
+	            <div class="span3">
+                        <br/><br/><br/>
+	              <div class="well sidebar-nav">
+                          <?php echo $this->element('today'); ?>
+                      </div>
+                    </div>
+                    
+                    
+                    
 
 	        </div><!--/row-->
 
