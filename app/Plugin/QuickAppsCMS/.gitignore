@@ -1,0 +1,33 @@
+# shell
+QuickApps/Plugin/System/Console/
+QuickApps/Console/
+QuickApps/Lib/Console/
+QuickApps/Cake/Console/
+
+# tests
+QuickApps/Cake/Test/
+QuickApps/Cake/TestSuite/
+
+# site modules
+/Modules/
+
+# sie themes
+Themes/Themed/*
+
+# site webroot
+/webroot/
+!QuickApps/Plugin/*/webroot/
+
+# site hooks
+Hooks/*
+
+# site config
+Config/database.php
+Config/core.php
+Config/install
+
+# development stuff
+dev/
+
+# site cache
+tmp/
