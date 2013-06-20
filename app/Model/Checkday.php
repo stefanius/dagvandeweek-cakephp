@@ -38,7 +38,7 @@ class Checkday extends AppModel {
                     $zaagmansGeweest=true;
                 }
 
-            }elseif($daynumber > 3){
+            }elseif($dayofweek > 3){
                 $zaagmansGeweest=true;
             }
             $description = 'Bekijk hier dagelijks of Zaagmans al is geweest. Zaagmaans komt elke woensdag langs op Dag Van De Week. Elke week weer een zaagmans.';
