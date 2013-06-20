@@ -13,6 +13,7 @@ class ContentsController extends AppController {
  * @return void
  */
 	public function index() {
+            exit;
 		$this->Content->recursive = 0;
 		$this->set('contents', $this->paginate());
 	}
