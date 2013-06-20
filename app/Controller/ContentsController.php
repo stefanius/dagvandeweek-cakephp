@@ -25,6 +25,7 @@ class ContentsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+             exit;
 		if (!$this->Content->exists($id)) {
 			throw new NotFoundException(__('Invalid content'));
 		}
@@ -38,6 +39,7 @@ class ContentsController extends AppController {
  * @return void
  */
 	public function add() {
+            exit;
 		if ($this->request->is('post')) {
 			$this->Content->create();
 			if ($this->Content->save($this->request->data)) {
@@ -57,6 +59,7 @@ class ContentsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+             exit;
 		if (!$this->Content->exists($id)) {
 			throw new NotFoundException(__('Invalid content'));
 		}
@@ -81,6 +84,7 @@ class ContentsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+             exit;
 		$this->Content->id = $id;
 		if (!$this->Content->exists()) {
 			throw new NotFoundException(__('Invalid content'));
