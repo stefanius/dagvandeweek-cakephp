@@ -16,5 +16,9 @@ class CheckdayController extends AppController {
     function gehaktdag(){
         $this->doRender($this->Checkday->isGehaktdag());              
     }
+    
+    function bieruur(){
+        $this->doRender($this->Checkday->isBieruur());              
+    }
 }
 

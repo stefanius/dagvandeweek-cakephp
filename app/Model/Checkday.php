@@ -63,4 +63,20 @@ class Checkday extends AppModel {
 
             return $this->fetch($description, $gehaktdag, false, $dayofweek, $countdown);
         }
+        
+        public function isBieruur(){
+            $isBieruur = false;
+            $dayofweek =  (int)date ("N");
+
+            if($dayofweek === 5){
+                $hour =  (int)date ("H");
+
+                if($hour === 16){
+                    $isBieruur=true;
+                }
+
+            }
+            $description = 'Tijd voor bier? Is het al Bieruur? Is het al tijd voor de VrijMiBo? Kijk op Dag Van De Week of het al bieruur is! Elke week op vrijdag. Vier uur is bier uur.';
+            return $this->fetch($description, $isBieruur, false, $dayofweek);
+        }
 }
