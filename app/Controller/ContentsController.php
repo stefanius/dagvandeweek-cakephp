@@ -123,6 +123,7 @@ class ContentsController extends AppController {
             $Content =  $this->load('watis', $urlpart);
             $description = $Content['Content']['description'];
             $robots = 'INDEX, FOLLOW';
+            $this->set('title_for_layout',  $Content['Content']['title']);
             $this->set(compact('Content', 'description', 'robots'));
         }
 }
