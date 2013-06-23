@@ -5,9 +5,8 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <?php
-            echo $this->Html->meta('description',$description );                
-            echo $this->Html->meta(array('name' => 'robots', 'content' => $robots));            
-
+                echo $this->Html->meta('description',$description );                
+                echo $this->Html->meta(array('name' => 'robots', 'content' => $robots));            
             ?>
             <title><?php echo $title_for_layout; ?></title>
 
@@ -20,9 +19,11 @@
     		echo $this->Bootstrap->load(); 
 
 
-			echo $this->fetch('meta');
-			echo $this->fetch('css');
-			echo $this->fetch('script');
+                echo $this->fetch('meta');
+                echo $this->fetch('css');
+                echo $this->fetch('script');
+                echo $this->Html->css('custom.aditions.twitter');
+             
     	?>
 
 	</head>
@@ -46,7 +47,7 @@
 	      </div>
 	    </div>
 
-	    <div class="container-fluid">
+	    <div class="container-fluid" id="custcontainer">
 	        <div class="row-fluid">
                     
 	            <div class="span2">
@@ -95,8 +96,17 @@
 
 	        </div><!--/row-->
 
-	      <footer>
-	        <p>&copy; DagVanDeWeek.nl <?php echo date('Y'); ?></p>
+	      <footer id="custfooter">
+	                <ul class="nav nav-list">
+	                  <li class="nav-header">Is het al</li>
+	                  <li><?php echo $this->Html->link('Gehaktdag', '/gehaktdag'); ?></li>
+	                  <li><?php echo $this->Html->link('Bieruur', '/bieruur'); ?></li>
+	                </ul>
+	                <ul class="nav nav-list">
+	                  <li class="nav-header">Is het al</li>
+	                  <li><?php echo $this->Html->link('Gehaktdag', '/gehaktdag'); ?></li>
+	                  <li><?php echo $this->Html->link('Bieruur', '/bieruur'); ?></li>
+	                </ul>
 	      </footer>
 
 	    </div> <!-- /container -->
