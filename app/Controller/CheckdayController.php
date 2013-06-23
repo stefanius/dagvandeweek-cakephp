@@ -3,10 +3,9 @@ class CheckdayController extends AppController {
     
     var $name = 'Checkday';
 
-    private function doRender($DayResult){
+    private function doRender($DayResult, $showwhatislink=true){
         $description = $DayResult['description'];
         $robots = $DayResult['robots'];
-        $showwhatislink=true;
         $this->set(compact('DayResult', 'description', 'robots', 'showwhatislink')); 
     }
     function zaagmans(){
@@ -31,6 +30,6 @@ class CheckdayController extends AppController {
         $daynumber=(int)$daynumber;
         $Checkday = $this->Checkday->isWeekday($daynumber);
         $this->set('title_for_layout', 'Is het vandaag '.$Checkday['dayname'].'?');
-        $this->doRender($Checkday);   
+        $this->doRender($Checkday, false);   
     }
 }
