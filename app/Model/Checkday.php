@@ -13,7 +13,7 @@ class Checkday extends AppModel {
  */
 	public $useTable = false;
 
-        private function fetch($description,$doaction=false,$robots=false, $dayofweek=0, $countdown=false){
+        private function fetch($description,$doaction=false,$robots=false, $dayofweek=0, $countdown=false, $dayname=''){
             if($robots===false){
                 $robots = 'INDEX, FOLLOW';
             }
@@ -22,7 +22,8 @@ class Checkday extends AppModel {
                 'robots'=>$robots,
                 'doaction'=>$doaction,
                 'dayofweek'=>$dayofweek,
-                'countdown'=>$countdown
+                'countdown'=>$countdown,
+                'dayname'=>$dayname
             );
             return $result;
         }
@@ -78,5 +79,36 @@ class Checkday extends AppModel {
             }
             $description = 'Tijd voor bier? Is het al Bieruur? Is het al tijd voor de VrijMiBo? Kijk op Dag Van De Week of het al bieruur is! Elke week op vrijdag. Vier uur is bier uur.';
             return $this->fetch($description, $isBieruur, false, $dayofweek);
+        }
+     
+        public function isWeekday($daynumber){
+            $dag='';
+            $dayofweek =  (int)date ("N");
+            
+            if($daynumber==1){
+                $dag='Maandag';
+            }elseif($daynumber==2){
+                $dag='Dinsdag';
+            }elseif($daynumber==3){
+                $dag='Woensdag';
+            }elseif($daynumber==4){
+                $dag='Donderdag';
+            }elseif($daynumber==5){
+                $dag='Vrijdag';
+            }elseif($daynumber==6){
+                $dag='Zaterdag';
+            }elseif($daynumber==7){
+                $dag='Zondag';
+            }elseif($daynumber==8){
+                $dag='VANDAAG';
+            }
+            
+            if($dayofweek===$daynumber || $daynumber===8){
+                $today=true;
+            }else{
+                $today=false;
+            }
+            $description='Is het al '.$dag.'? Kijk elke dag of het al '.$dag. ' is. Bij twijfel van elke dag, kijk op Dag Van De Week voor weer een nieuwe '.$dag.'!';
+            return $this->fetch($description, $today, false, $dayofweek, 0,$dag);
         }
 }

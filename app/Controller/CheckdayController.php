@@ -23,5 +23,14 @@ class CheckdayController extends AppController {
         $this->set('title_for_layout', 'Is het al bieruur?');
         $this->doRender($this->Checkday->isBieruur());              
     }
+    
+    function weekday($daynumber=false){
+        if($daynumber===false){
+            $this->redirect('/');
+        }
+        $daynumber=(int)$daynumber;
+        $Checkday = $this->Checkday->isWeekday($daynumber);
+        $this->set('title_for_layout', 'Is het vandaag '.$Checkday['dayname'].'?');
+        $this->doRender($Checkday);   
+    }
 }
-

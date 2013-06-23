@@ -33,7 +33,14 @@
         Router::connect('/gehaktdag', array('controller' => 'checkday', 'action' => 'gehaktdag'));
         Router::connect('/bieruur', array('controller' => 'checkday', 'action' => 'bieruur'));
         
-	
+        Router::connect('/ishetvandaag/maandag', array('controller' => 'checkday', 'action' => 'weekday', '1'));
+        Router::connect('/ishetvandaag/dinsdag', array('controller' => 'checkday', 'action' => 'weekday', '2'));
+        Router::connect('/ishetvandaag/woensdag', array('controller' => 'checkday', 'action' => 'weekday', '3'));
+        Router::connect('/ishetvandaag/donderdag', array('controller' => 'checkday', 'action' => 'weekday', '4'));
+        Router::connect('/ishetvandaag/vrijdag', array('controller' => 'checkday', 'action' => 'weekday', '5'));
+        Router::connect('/ishetvandaag/zaterdag', array('controller' => 'checkday', 'action' => 'weekday', '6'));
+	Router::connect('/ishetvandaag/zondag', array('controller' => 'checkday', 'action' => 'weekday', '7'));
+        Router::connect('/ishetvandaag/vandaag', array('controller' => 'checkday', 'action' => 'weekday', '8'));
         
         
 /**
