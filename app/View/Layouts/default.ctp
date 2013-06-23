@@ -40,7 +40,7 @@
 	          <?php echo $this->Html->link('DagVanDeWeek', '/', array('class' => 'brand')); ?>
 	          <div class="container nav-collapse">
 	            <ul class="nav">
-	            	<!--<li><?php echo $this->Html->link('Link1', '/link1'); ?></li> -->
+	            	<li><?php echo $this->Html->link('Nieuws', '#'); ?></li>
 	            </ul>
 	          </div><!--/.nav-collapse -->
 	        </div>
@@ -51,23 +51,7 @@
 	        <div class="row-fluid">
                     
 	            <div class="span2">
-                        <br/><br/><br/>
-	              <div class="well sidebar-nav">
-                          
-	                <h3>Pagina's</h3>
-	                <ul class="nav nav-list">
-	                  <li class="nav-header">Is het al</li>
-	                  <li><?php echo $this->Html->link('Gehaktdag', '/gehaktdag'); ?></li>
-	                  <li><?php echo $this->Html->link('Bieruur', '/bieruur'); ?></li>
-	                </ul>
-                        
-	                <ul class="nav nav-list">
-	                  <li class="nav-header">Is het tijd voor</li>
-	                  <li><?php echo $this->Html->link('Zaagmans', '/zaagmans'); ?></li>
-	                </ul>
-                        
-                        
-	              </div><!--/.well -->
+
 	            </div><!--/span-->
 
 	           	<div id="main-content" class="span7">
@@ -97,15 +81,7 @@
 	        </div><!--/row-->
 
 	      <footer id="custfooter">
-	                <ul class="nav nav-list">
-	                  <li class="nav-header">Is het al</li>
-	                  <li><?php echo $this->Html->link('Gehaktdag', '/gehaktdag'); ?></li>
-	                  <li><?php echo $this->Html->link('Bieruur', '/bieruur'); ?></li>
-	                </ul>                  
-	                <ul class="nav nav-list">
-	                  <li class="nav-header">Is het tijd voor</li>
-	                  <li><?php echo $this->Html->link('Zaagmans', '/zaagmans'); ?></li>
-	                </ul>
+                    <?php echo $this->element('footer'); ?>
 	      </footer>
 
 	    </div> <!-- /container -->
