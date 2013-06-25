@@ -2,7 +2,11 @@
 class CheckdayController extends AppController {
     
     var $name = 'Checkday';
-
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow();
+    }   
+        
     private function doRender($DayResult, $showwhatislink=true){
         $description = $DayResult['description'];
         $robots = $DayResult['robots'];

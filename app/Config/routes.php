@@ -29,6 +29,7 @@
         Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
         
         Router::connect('/watis/*', array('controller' => 'contents', 'action' => 'whatis'));
+        Router::connect('/nieuws/*', array('controller' => 'contents', 'action' => 'nieuws'));
         Router::connect('/zaagmans', array('controller' => 'checkday', 'action' => 'zaagmans'));
         Router::connect('/gehaktdag', array('controller' => 'checkday', 'action' => 'gehaktdag'));
         Router::connect('/bieruur', array('controller' => 'checkday', 'action' => 'bieruur'));

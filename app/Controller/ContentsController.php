@@ -7,6 +7,10 @@ App::uses('AppController', 'Controller');
  */
 class ContentsController extends AppController {
 
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('load', 'whatis', 'nieuws');
+    }   
 /**
  * index method
  *
@@ -40,7 +44,7 @@ class ContentsController extends AppController {
  * @return void
  */
 	public function add() {
-            exit;
+           // exit;
 		if ($this->request->is('post')) {
 			$this->Content->create();
 			if ($this->Content->save($this->request->data)) {
@@ -121,6 +125,14 @@ class ContentsController extends AppController {
         
         public function whatis($urlpart=null){
             $Content =  $this->load('watis', $urlpart);
+            $description = $Content['Content']['description'];
+            $robots = 'INDEX, FOLLOW';
+            $this->set('title_for_layout',  $Content['Content']['title']);
+            $this->set(compact('Content', 'description', 'robots'));
+        }
+        
+        public function nieuws($urlpart=null){
+            $Content =  $this->load('nieuws', $urlpart);
             $description = $Content['Content']['description'];
             $robots = 'INDEX, FOLLOW';
             $this->set('title_for_layout',  $Content['Content']['title']);
