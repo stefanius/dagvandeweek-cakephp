@@ -119,6 +119,7 @@ class UsersController extends AppController {
 	}
    
         public function login() {
+            $this->set('title_for_layout',  'Inloggen');
             if ($this->request->is('post')) {
                 if ($this->Auth->login()) {
                     $this->redirect($this->Auth->redirect());
