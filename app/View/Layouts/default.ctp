@@ -45,7 +45,7 @@
 	          <?php echo $this->Html->link('DagVanDeWeek', '/', array('class' => 'brand')); ?>
 	          <div class="container nav-collapse">
 	            <ul class="nav">
-	            	<li><?php echo $this->Html->link('Nieuws', '#'); ?></li>
+	            	<li><?php echo $this->Html->link('Nieuws', '/nieuws/'); ?></li>
 	            </ul>
                     <form class="navbar-form pull-right" method="post" id="login" action="/users/login">
                         <input class="span2" type="text" name="username" placeholder="Username">

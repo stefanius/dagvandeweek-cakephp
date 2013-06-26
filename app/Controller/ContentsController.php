@@ -9,7 +9,7 @@ class ContentsController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('load', 'whatis', 'nieuws');
+        $this->Auth->allow('load', 'whatis', 'nieuws', 'nieuwsindex');
     }   
 /**
  * index method
@@ -137,5 +137,19 @@ class ContentsController extends AppController {
             $robots = 'INDEX, FOLLOW';
             $this->set('title_for_layout',  $Content['Content']['title']);
             $this->set(compact('Content', 'description', 'robots'));
+        }
+        
+        public function nieuwsindex(){
+            $page = 1;
+            $offset=5;
+            $filter = array(
+                'conditions' => array('Content.section' => 'nieuws'),
+                'order' => array('Content.created DESC'),
+                'page' => $page,
+                'offset' => $offset,
+            );
+            $Nieuwslist = $this->Content->find('all', $filter);
+            $description = 'Het laatste nieuws van de dag. U leest het hier op Dag Van De Week. Nieuwsindex pagina '.$page.' met het nieuws van alle dag!';
+            $this->set(compact('Nieuwslist', 'description'));
         }
 }
