@@ -73,6 +73,10 @@ class PagesController extends AppController {
 		if (!empty($path[$count - 1])) {
 			$title_for_layout = Inflector::humanize($path[$count - 1]);
 		}
+                
+                if($title_for_layout==='home'){
+                    $this->set('title_for_layout',  'Welkom - DagVanDeWeek.nl');
+                }
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
 		$this->render(implode('/', $path));
 	}
