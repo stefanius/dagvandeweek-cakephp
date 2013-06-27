@@ -49,4 +49,8 @@
   <loc>http://dagvandeweek.nl/nieuws/we-zijn-online</loc>
   <changefreq>daily</changefreq>
 </url>
+<url>
+  <loc>http://dagvandeweek.nl/watis/gehaktdag</loc>
+  <changefreq>daily</changefreq>
+</url>
 </urlset>
