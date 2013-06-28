@@ -120,7 +120,8 @@ class ContentsController extends AppController {
         public function whatis($urlpart=null){
             $Content =  $this->load('watis', $urlpart);
             $description = $Content['Content']['description'];
-            $robots = $Content['Content']['robots'];
+            //$robots = $Content['Content']['robots'];
+            $robots='INDEX, FOLLOW';
             $this->set('title_for_layout',  $Content['Content']['title']);
             $this->set('canonical',  '/watis/'.$Content['Content']['urlpart'] );
             $this->set(compact('Content', 'description', 'robots'));
@@ -129,7 +130,8 @@ class ContentsController extends AppController {
         public function nieuws($urlpart=null){
             $Content =  $this->load('nieuws', $urlpart);
             $description = $Content['Content']['description'];
-            $robots = $Content['Content']['robots'];
+           // $robots = $Content['Content']['robots'];
+            $robots='INDEX, FOLLOW';
             $this->set('title_for_layout',  $Content['Content']['title']);
             $this->set('canonical',  '/nieuws/'.$Content['Content']['urlpart'] );
             $this->set(compact('Content', 'description', 'robots'));
