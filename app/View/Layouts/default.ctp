@@ -5,7 +5,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <?php
-                echo $this->Html->meta('canonical', trim($this->here, '/').'/', array('rel'=>'canonical', 'type'=>null, 'title'=>null))."\n";
+                echo $this->Html->meta('canonical', trim($this->here, '/'), array('rel'=>'canonical', 'type'=>null, 'title'=>null))."\n";
                 echo $this->Html->meta('description',$description )."\n";         
                 if(isset($robots)){
                     echo $this->Html->meta(array('name' => 'robots', 'content' => $robots))."\n";
