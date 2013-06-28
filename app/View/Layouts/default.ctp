@@ -64,19 +64,17 @@
 
 	            </div><!--/span-->
 
-	           	<div id="main-content" class="span7">
-                            <br/><br/><br/>
-                          
-					<?php echo $this->Session->flash(); ?>
+	           	<div id="main-content" class="span7 pagebody">                       
+                            <?php echo $this->Session->flash(); ?>
 
-					<?php echo $this->fetch('content'); ?>
-                                        <?php 
-                                            if(isset($showwhatislink)){
-                                                if($showwhatislink===true){
-                                                    echo $this->element('watislink'); 
-                                                }                                                
-                                            }
-                                        ?>
+                            <?php echo $this->fetch('content'); ?>
+                            <?php 
+                                if(isset($showwhatislink)){
+                                    if($showwhatislink===true){
+                                        echo $this->element('watislink'); 
+                                    }                                                
+                                }
+                            ?>
 	            </div><!--/span-->
 	            <div class="span3">
                         <br/><br/><br/>
