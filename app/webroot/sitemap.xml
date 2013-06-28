@@ -6,31 +6,43 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
+  <loc>http://dagvandeweek.nl/ishetvandaag/vandaag/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dagvandeweek.nl/ishetvandaag/vrijdag/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dagvandeweek.nl/ishetvandaag/maandag/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
   <loc>http://dagvandeweek.nl/</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://dagvandeweek.nl/gehaktdag</loc>
+  <loc>http://dagvandeweek.nl/gehaktdag/</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://dagvandeweek.nl/bieruur</loc>
+  <loc>http://dagvandeweek.nl/bieruur/</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://dagvandeweek.nl/zaagmans</loc>
+  <loc>http://dagvandeweek.nl/zaagmans/</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://dagvandeweek.nl/watis/gehaktdag</loc>
+  <loc>http://dagvandeweek.nl/watis/gehaktdag/</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://dagvandeweek.nl/watis/bieruur</loc>
+  <loc>http://dagvandeweek.nl/watis/bieruur/</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://dagvandeweek.nl/watis/zaagmans</loc>
+  <loc>http://dagvandeweek.nl/watis/zaagmans/</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
@@ -38,19 +50,19 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://dagvandeweek.nl/nieuws/binnenstebuiten-week</loc>
+  <loc>http://dagvandeweek.nl/nieuws/binnenstebuiten-week/</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://dagvandeweek.nl/nieuws/dag-van-het-feest</loc>
+  <loc>http://dagvandeweek.nl/nieuws/dag-van-het-feest/</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://dagvandeweek.nl/nieuws/we-zijn-online</loc>
+  <loc>http://dagvandeweek.nl/nieuws/we-zijn-online/</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://dagvandeweek.nl/watis/gehaktdag</loc>
+  <loc>http://dagvandeweek.nl/watis/gehaktdag/</loc>
   <changefreq>daily</changefreq>
 </url>
 </urlset>
