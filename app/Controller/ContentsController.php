@@ -147,7 +147,7 @@ class ContentsController extends AppController {
             $Nieuwslist = $this->Content->find('all', $filter);
             $description = 'Het laatste nieuws van de dag. U leest het hier op Dag Van De Week. Nieuwsindex pagina '.$page.' met het nieuws van alle dag!';
             $this->set('title_for_layout',  'Nieuwsoverzicht - DagVanDeWeek.nl');
-            $this->set('canonical',  '/watis' );
+            $this->set('canonical',  '/nieuws' );
             $this->set(compact('Nieuwslist', 'description'));
         }
 }

@@ -7,7 +7,7 @@
             <?php
                 
                 echo $this->Html->meta('description',$description )."\n";    
-                
+
                 if(isset($canonical)){
                     echo $this->Html->meta('canonical', $canonical, array('rel'=>'canonical', 'type'=>null, 'title'=>null))."\n";
                 }
