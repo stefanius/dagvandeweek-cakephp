@@ -5,12 +5,12 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <?php
-                echo $this->Html->meta('canonical', trim($this->here, '/').'/', array('rel'=>'canonical', 'type'=>null, 'title'=>null));
-                echo $this->Html->meta('description',$description );         
+                echo $this->Html->meta('canonical', trim($this->here, '/').'/', array('rel'=>'canonical', 'type'=>null, 'title'=>null))."\n";
+                echo $this->Html->meta('description',$description )."\n";         
                 if(isset($robots)){
-                    echo $this->Html->meta(array('name' => 'robots', 'content' => $robots));
+                    echo $this->Html->meta(array('name' => 'robots', 'content' => $robots))."\n";
                 }else{
-                    echo $this->Html->meta(array('name' => 'robots', 'content' => 'INDEX,FOLLOW'));
+                    echo $this->Html->meta(array('name' => 'robots', 'content' => 'INDEX,FOLLOW'))."\n";
                 }
             ?>
             <title><?php echo $title_for_layout; ?></title>
@@ -21,10 +21,10 @@
 
     	<?php
     		echo $this->Bootstrap->load(); 
-                echo $this->fetch('meta');
-                echo $this->fetch('css');
-                echo $this->fetch('script');
-                echo $this->Html->css('custom.aditions.twitter');     
+                echo $this->fetch('meta')."\n";
+                echo $this->fetch('css')."\n";
+                echo $this->fetch('script')."\n";
+                echo $this->Html->css('custom.aditions.twitter')."\n";     
     	?>
 
 	</head>
