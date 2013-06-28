@@ -65,4 +65,14 @@
   <loc>http://dagvandeweek.nl/watis/gehaktdag</loc>
   <changefreq>daily</changefreq>
 </url>
+
+<url>
+  <loc>http://dagvandeweek.nl/watis/maandag</loc>
+  <changefreq>daily</changefreq>
+</url>
+
+<url>
+  <loc>http://dagvandeweek.nl/watis/zaterdag</loc>
+  <changefreq>daily</changefreq>
+</url>
 </urlset>
