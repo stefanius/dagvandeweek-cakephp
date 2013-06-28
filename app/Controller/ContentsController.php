@@ -114,7 +114,7 @@ class ContentsController extends AppController {
                     'conditions' => 
                             array('Content.urlpart' => $urlpart, 'Content.section' => $section) //array of conditions
                 );
-                
+                $this->set('canonical',  '/'.trim($section, '/').'/'.$urlpart );
 		return $this->Content->find('first', $filter);
 	}
         
