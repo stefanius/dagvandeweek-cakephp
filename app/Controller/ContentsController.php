@@ -113,8 +113,7 @@ class ContentsController extends AppController {
                 $filter = array(
                     'conditions' => 
                             array('Content.urlpart' => $urlpart, 'Content.section' => $section) //array of conditions
-                );
-                $this->set('canonical',  '/'.trim($section, '/').'/'.$urlpart );
+                );              
 		return $this->Content->find('first', $filter);
 	}
         
@@ -123,6 +122,7 @@ class ContentsController extends AppController {
             $description = $Content['Content']['description'];
             $robots = 'INDEX, FOLLOW';
             $this->set('title_for_layout',  $Content['Content']['title']);
+            $this->set('canonical',  '/watis/'.$Content['Content']['urlpart'] );
             $this->set(compact('Content', 'description', 'robots'));
         }
         
@@ -131,6 +131,7 @@ class ContentsController extends AppController {
             $description = $Content['Content']['description'];
             $robots = 'INDEX, FOLLOW';
             $this->set('title_for_layout',  $Content['Content']['title']);
+            $this->set('canonical',  '/nieuws/'.$Content['Content']['urlpart'] );
             $this->set(compact('Content', 'description', 'robots'));
         }
         
@@ -146,6 +147,7 @@ class ContentsController extends AppController {
             $Nieuwslist = $this->Content->find('all', $filter);
             $description = 'Het laatste nieuws van de dag. U leest het hier op Dag Van De Week. Nieuwsindex pagina '.$page.' met het nieuws van alle dag!';
             $this->set('title_for_layout',  'Nieuwsoverzicht - DagVanDeWeek.nl');
+            $this->set('canonical',  '/watis' );
             $this->set(compact('Nieuwslist', 'description'));
         }
 }
