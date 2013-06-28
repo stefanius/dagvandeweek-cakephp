@@ -5,15 +5,13 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <?php
-                echo $this->Html->meta('canonical', $this->here, array('rel'=>'canonical', 'type'=>null, 'title'=>null));
+                echo $this->Html->meta('canonical', trim($this->here, '/').'/', array('rel'=>'canonical', 'type'=>null, 'title'=>null));
                 echo $this->Html->meta('description',$description );         
                 if(isset($robots)){
                     echo $this->Html->meta(array('name' => 'robots', 'content' => $robots));
                 }else{
                     echo $this->Html->meta(array('name' => 'robots', 'content' => 'INDEX,FOLLOW'));
                 }
-                
-                            
             ?>
             <title><?php echo $title_for_layout; ?></title>
 
@@ -22,15 +20,11 @@
     	<![endif]-->
 
     	<?php
-    		//Load Bootstrap:  
     		echo $this->Bootstrap->load(); 
-
-
                 echo $this->fetch('meta');
                 echo $this->fetch('css');
                 echo $this->fetch('script');
-                echo $this->Html->css('custom.aditions.twitter');
-             
+                echo $this->Html->css('custom.aditions.twitter');     
     	?>
 
 	</head>
@@ -82,12 +76,7 @@
                           <?php echo $this->element('today'); ?>
                       </div>
                     </div>
-                    
-                    
-                    
-
 	        </div><!--/row-->
-
 	      <footer id="custfooter">
                     <?php echo $this->element('footer'); ?>
 	      </footer>
