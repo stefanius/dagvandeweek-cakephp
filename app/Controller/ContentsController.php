@@ -9,7 +9,7 @@ class ContentsController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('load', 'whatis', 'nieuws', 'nieuwsindex');
+        $this->Auth->allow('load', 'whatis', 'nieuws', 'nieuwsindex', 'watisindex');
     }   
 /**
  * index method
@@ -152,4 +152,20 @@ class ContentsController extends AppController {
             $this->set('canonical',  '/nieuws' );
             $this->set(compact('Nieuwslist', 'description'));
         }
+        
+        public function watisindex(){
+            $page = 1;
+            $offset=5;
+            $filter = array(
+                'conditions' => array('Content.section' => 'watis'),
+                'order' => array('Content.created DESC'),
+                'page' => $page,
+                'offset' => $offset,
+            );
+            $Watislist = $this->Content->find('all', $filter);
+            $description = 'Altijd al willen weten wie of wat Zaagmans, Gehaktdag, Maandag, Bieruur of Zondag is? Lees het op Dag Van De Week en vergroot uw kennis!';
+            $this->set('title_for_layout',  'Wat Is - DagVanDeWeek.nl');
+            $this->set('canonical',  '/watis' );
+            $this->set(compact('Watislist', 'description'));
+        }        
 }

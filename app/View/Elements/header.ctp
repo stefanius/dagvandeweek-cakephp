@@ -10,6 +10,7 @@
         <div class="container nav-collapse">
             <ul class="nav">
                 <li><?php echo $this->Html->link('Nieuws', '/nieuws/'); ?></li>
+                <li><?php echo $this->Html->link('Wat Is', '/watis/'); ?></li>
             </ul>
 
             <?php echo $this->element('loginbar');  ?>

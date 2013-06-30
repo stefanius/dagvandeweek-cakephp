@@ -27,9 +27,11 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
         Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+
+        Router::connect('/nieuws', array('controller' => 'contents', 'action' => 'nieuwsindex'));
+        Router::connect('/watis', array('controller' => 'contents', 'action' => 'watisindex'));        
         
         Router::connect('/watis/*', array('controller' => 'contents', 'action' => 'whatis'));
-        Router::connect('/nieuws', array('controller' => 'contents', 'action' => 'nieuwsindex'));
         Router::connect('/nieuws/*', array('controller' => 'contents', 'action' => 'nieuws'));       
         Router::connect('/nieuws/p/', array('controller' => 'contents', 'action' => 'nieuwsindex'));
         Router::connect('/zaagmans', array('controller' => 'checkday', 'action' => 'zaagmans'));
