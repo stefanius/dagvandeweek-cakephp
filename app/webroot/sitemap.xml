@@ -6,6 +6,11 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
+  <loc>http://dagvandeweek.nl/watis</loc>
+  <changefreq>daily</changefreq>
+</url>
+
+<url>
   <loc>http://dagvandeweek.nl/ishetvandaag/vandaag</loc>
   <changefreq>daily</changefreq>
 </url>
