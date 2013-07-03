@@ -38,6 +38,8 @@
         Router::connect('/gehaktdag', array('controller' => 'checkday', 'action' => 'gehaktdag'));
         Router::connect('/bieruur', array('controller' => 'checkday', 'action' => 'bieruur'));
         
+        Router::connect('/historie/*', array('controller' => 'histories', 'action' => 'viewdate'));
+        
         Router::connect('/ishetvandaag/maandag', array('controller' => 'checkday', 'action' => 'weekday', '1'));
         Router::connect('/ishetvandaag/dinsdag', array('controller' => 'checkday', 'action' => 'weekday', '2'));
         Router::connect('/ishetvandaag/woensdag', array('controller' => 'checkday', 'action' => 'weekday', '3'));
