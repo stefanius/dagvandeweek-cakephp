@@ -1,3 +1,4 @@
+<?php echo $this->Html->script('ckeditor/ckeditor'); ?>
 <div class="histories form">
 <?php echo $this->Form->create('History'); ?>
 	<fieldset>
@@ -9,7 +10,7 @@
 		echo $this->Form->input('year');
 		echo $this->Form->input('urlpart');
 		echo $this->Form->input('title');
-		echo $this->Form->input('pagecontent');
+		echo $this->Fck->ckedit('history.pagecontent', $this->request->data['History']['pagecontent']);
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
