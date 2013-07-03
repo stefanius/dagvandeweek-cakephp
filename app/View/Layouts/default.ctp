@@ -4,6 +4,7 @@
 	    <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
             <?php
                 
                 echo $this->Html->meta('description',$description )."\n";    
@@ -18,6 +19,8 @@
                     echo $this->Html->meta(array('name' => 'robots', 'content' => 'INDEX,FOLLOW'))."\n";
                 }
             ?>
+            <meta name="revisit-after" content="1 days">
+            <meta name="googlebot" content="noodp">
             <title><?php echo $title_for_layout; ?></title>
 
 		<!--[if lt IE 9]>
