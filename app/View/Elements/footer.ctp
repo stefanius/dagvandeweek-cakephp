@@ -23,4 +23,5 @@
     <li><?php echo $this->Html->link('1944', '/historie/1944'); ?></li>
     <li><?php echo $this->Html->link('1980', '/historie/1980'); ?></li>
     <li><?php echo $this->Html->link('2000', '/historie/2000'); ?></li>
+    <li><?php echo $this->Html->link('2000', '/historie/2001'); ?></li>
 </ul>
