@@ -167,6 +167,7 @@ class HistoriesController extends AppController {
             
             if($singleitem==true){
                 $History = $this->History->find('first', $filter);
+                $this->set('title_for_layout', $History['History']['title']);
                 $this->set(compact('History'));
             }else{
                 $History = $this->History->find('all', $filter);
@@ -180,6 +181,7 @@ class HistoriesController extends AppController {
                     $pagetitle = 'Wat gebeurde er in het jaar '.$conditions['History.year'];
                     $description = 'Lees hier alles uit '.$conditions['History.year'].'! Het nieuws en de geschiedenis van '.$conditions['History.year'].'! Lees alles op Dag Van De Week. Ook voor het jaar  '.$conditions['History.year'];
                 }
+                $this->set('title_for_layout', $pagetitle);
                 $this->set(compact('History', 'pagetitle', 'description', 'canonical'));
                 $this->render('viewdateindex');              
             }
