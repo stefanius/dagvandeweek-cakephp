@@ -168,6 +168,7 @@ class HistoriesController extends AppController {
             if($singleitem==true){
                 $History = $this->History->find('first', $filter);
                 $this->set('title_for_layout', $History['History']['title']);
+                $this->set('description',  substr( $History['History']['pagecontent'], 0,159));
                 $this->set(compact('History'));
             }else{
                 $History = $this->History->find('all', $filter);
