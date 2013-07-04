@@ -1,3 +1,4 @@
+<?php echo $this->Html->script('ckeditor/ckeditor'); ?>
 <div class="toppers form">
 <?php echo $this->Form->create('Topper'); ?>
 	<fieldset>
@@ -7,7 +8,7 @@
 		echo $this->Form->input('week');
 		echo $this->Form->input('title');
 		echo $this->Form->input('description');
-		echo $this->Form->input('pagecontent');
+		echo $this->Fck->ckedit('topper.pagecontent');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
