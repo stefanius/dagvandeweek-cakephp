@@ -93,4 +93,18 @@ class ToppersController extends AppController {
 		$this->Session->setFlash(__('Topper was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+        
+        public function showtopper($year=null, $week=null){
+               //$week = (int)$week;
+                if($week < 10){
+                    $week = '0'.$week;
+                }
+                $filter = array(
+                    'conditions' => 
+                            array('Topper.year' => $year, 'Topper.week' => $week) //array of conditions
+                );    
+                $Topper =  $this->Topper->find('first', $filter);
+                $canonical='/topper-van-de-week/'.$year.'/'.$week;
+		$this->set(compact('Topper', 'canonical'));                    
+        }
 }

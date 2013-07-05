@@ -29,7 +29,9 @@
         Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 
         Router::connect('/nieuws', array('controller' => 'contents', 'action' => 'nieuwsindex'));
-        Router::connect('/watis', array('controller' => 'contents', 'action' => 'watisindex'));        
+        Router::connect('/watis', array('controller' => 'contents', 'action' => 'watisindex')); 
+        
+        Router::connect('/topper-van-de-week/*', array('controller' => 'toppers', 'action' => 'showtopper'));
         
         Router::connect('/watis/*', array('controller' => 'contents', 'action' => 'whatis'));
         Router::connect('/nieuws/*', array('controller' => 'contents', 'action' => 'nieuws'));       

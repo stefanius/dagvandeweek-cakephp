@@ -1,0 +1,1 @@
+<h1><?php echo $Topper['Topper']['title']; ?></h1><?php echo $Topper['Topper']['pagecontent']; ?>
