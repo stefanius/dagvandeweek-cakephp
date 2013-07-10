@@ -7,6 +7,11 @@ App::uses('AppController', 'Controller');
  */
 class ToppersController extends AppController {
 
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('showtopper');
+       
+    }   
 /**
  * index method
  *
@@ -95,16 +100,42 @@ class ToppersController extends AppController {
 	}
         
         public function showtopper($year=null, $week=null){
-               //$week = (int)$week;
-                if($week < 10){
-                    $week = '0'.$week;
+                if(is_null($year) || strlen($year) !== 4 ){
+                    throw new NotFoundException(__('Geen weektoppers gevonden'));
                 }
-                $filter = array(
-                    'conditions' => 
-                            array('Topper.year' => $year, 'Topper.week' => $week) //array of conditions
-                );    
-                $Topper =  $this->Topper->find('first', $filter);
-                $canonical='/topper-van-de-week/'.$year.'/'.$week;
-		$this->set(compact('Topper', 'canonical'));                    
+            
+                if(!is_null($week)){
+                    $week = (int)$week;
+                    if($week < 10){
+                        $week = '0'.$week;
+                    }
+                    $filter = array(
+                        'conditions' => 
+                                array('Topper.year' => $year, 'Topper.week' => $week) //array of conditions
+                    );    
+                    $Topper =  $this->Topper->find('first', $filter);
+                    $canonical='/topper-van-de-week/'.$year.'/'.$week;
+
+                    if(strlen($Topper['Topper']['description']) < 2){
+                        $description = 'Week '.$Topper['Topper']['week'] . '('.$Topper['Topper']['year'].'). Elke week een nieuwe Topper van de Week!'.substr($Topper['Topper']['pagecontent'], 0,50);
+                    }else{
+                        $description=$Topper['Topper']['description'];
+                    }          
+                    $this->set('title_for_layout', $Topper['Topper']['title'].' - Topper v/d Week '.$Topper['Topper']['week'].' (' .$Topper['Topper']['year'].')' );
+                    $this->set(compact('Topper', 'canonical', 'description'));                       
+                    
+                }else{
+                    $filter = array(
+                        'conditions' => 
+                                array('Topper.year' => $year) //array of conditions
+                    );    
+                    $Toppers =  $this->Topper->find('all', $filter);
+                    $this->set('title_for_layout',  'Topper van de Week - '.$year.' Jaaroverzicht '.$year);
+                    $this->set('pagetitle',  'Topper van de Week - Jaaroverzicht '.$year );
+                    $this->set('year',  $year );
+                    $this->set('Toppers',  $Toppers );
+                    $canonical='/topper-van-de-week/'.$year;       
+                    $this->render('weektopperindex');
+                }
         }
 }
