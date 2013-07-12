@@ -28,6 +28,7 @@
     	<![endif]-->
 
     	<?php
+                echo $this->Html->script('jquery/jquery-2.0.3.min.js');
     		echo $this->Bootstrap->load(); 
                 echo $this->fetch('meta')."\n";
                 echo $this->fetch('css')."\n";
@@ -64,7 +65,5 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-    window.onload=contentscript ; 
     </script>
 </html>
-
