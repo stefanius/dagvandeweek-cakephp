@@ -101,6 +101,8 @@ class Checkday extends AppModel {
                 $dag='Zondag';
             }elseif($daynumber==8){
                 $dag='VANDAAG';
+            }elseif($daynumber==9){
+                $dag='Gisteren';
             }
             
             if($dayofweek===$daynumber || $daynumber===8){
