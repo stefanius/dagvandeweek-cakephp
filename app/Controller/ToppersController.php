@@ -127,7 +127,8 @@ class ToppersController extends AppController {
                 }else{
                     $filter = array(
                         'conditions' => 
-                                array('Topper.year' => $year) //array of conditions
+                                array('Topper.year' => $year), //array of conditions
+                        'order' => array('Topper.week DESC')
                     );    
                     $Toppers =  $this->Topper->find('all', $filter);
                     $this->set('title_for_layout',  'Topper van de Week - '.$year.' Jaaroverzicht '.$year);
