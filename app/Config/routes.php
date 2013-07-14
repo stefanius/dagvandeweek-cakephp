@@ -51,7 +51,7 @@
 	Router::connect('/ishetvandaag/zondag', array('controller' => 'checkday', 'action' => 'weekday', '7'));
         Router::connect('/ishetvandaag/vandaag', array('controller' => 'checkday', 'action' => 'weekday', '8'));
         Router::connect('/ishetvandaag/gisteren', array('controller' => 'checkday', 'action' => 'weekday', '9'));
-        
+        Router::connect('/ishetvandaag/morgen', array('controller' => 'checkday', 'action' => 'weekday', '10'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
