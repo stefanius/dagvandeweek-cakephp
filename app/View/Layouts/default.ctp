@@ -29,7 +29,7 @@
 
     	<?php
                 echo $this->Html->script('jquery/jquery-2.0.3.min.js');
-    		echo $this->Bootstrap->load(); 
+    		echo $this->Bootstrap->load('min', array('responsive'=>true)); 
                 echo $this->fetch('meta')."\n";
                 echo $this->fetch('css')."\n";
                 echo $this->fetch('script')."\n";
@@ -46,10 +46,10 @@
 	        <div id="content">                
                      <?php echo $this->element('content'); ?>
                 </div>
-	      <div id="footer">
-                    <?php echo $this->element('footer'); ?>
-	      </div>
-
+                <div id="footer" class="hidden-phone">
+                      <?php echo $this->element('footer'); ?>                
+                </div>
+                
 	    </div> <!-- /container -->
 
 	</body>

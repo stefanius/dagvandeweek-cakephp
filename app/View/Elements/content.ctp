@@ -17,7 +17,7 @@
                         ?>
                     </div><!--/span-->
                     
-	            <div class="span3">
+	            <div class="span3 hidden-phone">
                         <div id="today" class="well sidebar-nav">
                             <?php echo $this->element('today'); ?>
                         </div>
