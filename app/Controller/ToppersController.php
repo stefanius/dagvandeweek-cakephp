@@ -122,7 +122,7 @@ class ToppersController extends AppController {
                         $description=$Topper['Topper']['description'];
                     }          
                     $this->set('title_for_layout', $Topper['Topper']['title'].' - Topper v/d Week '.$Topper['Topper']['week'].' (' .$Topper['Topper']['year'].')' );
-                    $this->set(compact('Topper', 'canonical', 'description'));                       
+                    $this->set(compact('Topper', 'canonical', 'description', 'year'));                       
                     
                 }else{
                     $filter = array(
