@@ -130,10 +130,13 @@ class ToppersController extends AppController {
                                 array('Topper.year' => $year), //array of conditions
                         'order' => array('Topper.week DESC')
                     );    
+                    
+                    $description = $year. ' Jaaroverzicht. Elke week een NIEUWE Topper van de Week op Dag Van De Week. Hier vind u het overzicht uit '.$year.'! Naast de Weektopper is '.$year.' natuurlijk een Topjaar!';
                     $Toppers =  $this->Topper->find('all', $filter);
                     $this->set('title_for_layout',  'Topper van de Week - '.$year.' Jaaroverzicht '.$year);
                     $this->set('pagetitle',  'Topper van de Week - Jaaroverzicht '.$year );
                     $this->set('year',  $year );
+                    $this->set('description',  $description );
                     $this->set('Toppers',  $Toppers );
                     $canonical='/topper-van-de-week/'.$year;       
                     $this->render('weektopperindex');
