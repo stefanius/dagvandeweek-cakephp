@@ -30,6 +30,7 @@
 
         Router::connect('/nieuws', array('controller' => 'contents', 'action' => 'nieuwsindex'));
         Router::connect('/watis', array('controller' => 'contents', 'action' => 'watisindex')); 
+        Router::connect('/topper-van-de-week', array('controller' => 'toppers', 'action' => 'weektoppermainpage'));
         
         Router::connect('/topper-van-de-week/*', array('controller' => 'toppers', 'action' => 'showtopper'));
         

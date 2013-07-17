@@ -9,7 +9,7 @@ class ToppersController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('showtopper');
+        $this->Auth->allow('showtopper', 'weektoppermainpage');
        
     }   
 /**
@@ -98,6 +98,14 @@ class ToppersController extends AppController {
 		$this->Session->setFlash(__('Topper was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+        public function weektoppermainpage(){
+                    $this->set('title_for_layout','Topper van de Week - Index' );
+                    $description = 'Voor elk jaar, en elke week is er een Topper van de Week. Hier vindt u de jaren waar wij Weektoppers van hebben verzameld!';
+                    $canonical = 'http://dagvandeweek.nl/topper-van-de-week';
+                    $years = array('2012', '2013');
+                    $this->set(compact('years', 'canonical', 'description'));              
+        }        
         
         public function showtopper($year=null, $week=null){
                 if(is_null($year) || strlen($year) !== 4 ){
