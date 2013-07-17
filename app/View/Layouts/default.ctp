@@ -43,7 +43,8 @@
                 <div id="header">  
                       <?php echo $this->element('header'); ?>
                 </div>
-	        <div id="content">                
+	        <div id="content">      
+                     <?php echo $this->Html->getCrumbs(' > ', 'Home'); ?>
                      <?php echo $this->element('content'); ?>
                 </div>
                 <div id="footer" class="hidden-phone">

@@ -1,3 +1,6 @@
+<?php
+    $this->Html->addCrumb('Wat Is', '/watis');
+?>
 <h1>Wat is....</h1>
 <p>Wat of Wie is nu toch een bepaalde dag of persoon? Wij geven daar graag antwoord op. Hieronder kunt u
     alle kennis vinden die u nodig heeft in het dagelijks leven, maar ook kennis die u verder helpt op deze site.</p>

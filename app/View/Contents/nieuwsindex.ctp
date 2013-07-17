@@ -1,3 +1,6 @@
+<?php
+    $this->Html->addCrumb('Nieuws', '/nieuws');
+?>
 <h1>Laatste Nieuws</h1>
 <?php
 
