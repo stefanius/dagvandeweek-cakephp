@@ -101,10 +101,8 @@ class HistoriesController extends AppController {
 		$this->Session->setFlash(__('History was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
-        
-        public function viewdate($year=null, $month=null, $day=null, $urlpart=null){
-            $conditions = array();
-            $canonical = '/historie';
+ 
+        private function Months(){
             $months = array(
                 '01'=>'Januari',
                 '02'=>'Februari',
@@ -114,11 +112,18 @@ class HistoriesController extends AppController {
                 '06'=>'Juni',
                 '07'=>'Juli',
                 '08'=>'Augustus',
-                '09'=>'Sepember',
+                '09'=>'September',
                 '10'=>'Oktober',
                 '11'=>'November',
                 '12'=>'December'
             );
+            return $months;
+        }
+        
+        public function viewdate($year=null, $month=null, $day=null, $urlpart=null){
+            $conditions = array();
+            $canonical = '/historie';
+            $months=$this->Months();
             $singleitem = false;
             
             if(!is_null($year)){
@@ -169,7 +174,7 @@ class HistoriesController extends AppController {
                 $History = $this->History->find('first', $filter);
                 $this->set('title_for_layout', $History['History']['title']);
                 $this->set('description',  substr( $History['History']['pagecontent'], 0,159));
-                $this->set(compact('History'));
+                $this->set(compact('History','months',  'day', 'month', 'year'));
             }else{
                 $History = $this->History->find('all', $filter);
                 if(array_key_exists('History.day', $conditions)){
@@ -183,7 +188,7 @@ class HistoriesController extends AppController {
                     $description = 'Lees hier alles uit '.$conditions['History.year'].'! Het nieuws en de geschiedenis van '.$conditions['History.year'].'! Lees alles op Dag Van De Week. Ook voor het jaar  '.$conditions['History.year'];
                 }
                 $this->set('title_for_layout', $pagetitle);
-                $this->set(compact('History', 'pagetitle', 'description', 'canonical'));
+                $this->set(compact('History', 'pagetitle', 'description', 'canonical', 'months', 'day', 'month', 'year'));
                 $this->render('viewdateindex');              
             }
         }
