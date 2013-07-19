@@ -43,7 +43,7 @@
         
         Router::connect('/historie/*', array('controller' => 'histories', 'action' => 'viewdate'));
         
-        Router::connect('/kalender/*', array('controller' => 'checkday', 'action' => 'kalender'));
+        Router::connect('/kalender/*', array('controller' => 'histories', 'action' => 'calender'));
         
         Router::connect('/ishetvandaag/maandag', array('controller' => 'checkday', 'action' => 'weekday', '1'));
         Router::connect('/ishetvandaag/dinsdag', array('controller' => 'checkday', 'action' => 'weekday', '2'));

@@ -23,5 +23,38 @@
     <li><?php echo $this->Html->link('1944', '/historie/1944'); ?></li>
     <li><?php echo $this->Html->link('1980', '/historie/1980'); ?></li>
     <li><?php echo $this->Html->link('2000', '/historie/2000'); ?></li>
-    <li><?php echo $this->Html->link('2000', '/historie/2001'); ?></li>
+    <li><?php echo $this->Html->link('2001', '/historie/2001'); ?></li>
+</ul>
+
+<ul class="nav nav-list">
+    <li class="nav-header">Kalender</li>
+    <li><?php echo $this->Html->link('2015', '/kalender/2015'); ?></li>
+    <li><?php echo $this->Html->link('2014', '/kalender/2014'); ?></li>
+    <li><?php echo $this->Html->link('2013', '/kalender/2013'); ?></li>
+    <li><?php echo $this->Html->link('2012', '/kalender/2012'); ?></li>
+    <li><?php echo $this->Html->link('2011', '/kalender/2011'); ?></li>
+    <li><?php echo $this->Html->link('2010', '/kalender/2010'); ?></li>
+    <li><?php echo $this->Html->link('2009', '/kalender/2009'); ?></li>
+</ul>
+
+<ul class="nav nav-list">
+    <li class="nav-header">Kalender</li>
+    <li><?php echo $this->Html->link('2010', '/kalender/2010'); ?></li>
+    <li><?php echo $this->Html->link('2000', '/kalender/2000'); ?></li>
+    <li><?php echo $this->Html->link('1990', '/kalender/1990'); ?></li>
+    <li><?php echo $this->Html->link('1980', '/kalender/1980'); ?></li>
+    <li><?php echo $this->Html->link('1970', '/kalender/1970'); ?></li>
+    <li><?php echo $this->Html->link('1960', '/kalender/1960'); ?></li>
+    <li><?php echo $this->Html->link('1950', '/kalender/1950'); ?></li>
+</ul>
+
+<ul class="nav nav-list">
+    <li class="nav-header">Kalender</li>
+    <li><?php echo $this->Html->link('1945', '/kalender/1945'); ?></li>
+    <li><?php echo $this->Html->link('1944', '/kalender/1944'); ?></li>
+    <li><?php echo $this->Html->link('1943', '/kalender/1943'); ?></li>
+    <li><?php echo $this->Html->link('1942', '/kalender/1942'); ?></li>
+    <li><?php echo $this->Html->link('1941', '/kalender/1941'); ?></li>
+    <li><?php echo $this->Html->link('1940', '/kalender/1940'); ?></li>
+    <li><?php echo $this->Html->link('1939', '/kalender/1939'); ?></li>
 </ul>

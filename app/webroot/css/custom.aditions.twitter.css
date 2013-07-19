@@ -63,3 +63,21 @@ div#footer p {
         padding:1em;
         margin:0;
 }
+
+div.kalender table{
+    text-align: right;
+}
+
+div.kalender table td{
+    width: 40px;
+    height: 30px;
+    font-size: 120%; 
+}
+
+div.kalender h2{
+    text-align: center;
+}
+
+div.kalender{
+    width: 280px;
+}

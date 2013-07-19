@@ -9,7 +9,7 @@ class HistoriesController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('viewdate');
+        $this->Auth->allow('viewdate', 'calender');
        
     }   
     
@@ -191,5 +191,23 @@ class HistoriesController extends AppController {
                 $this->set(compact('History', 'pagetitle', 'description', 'canonical', 'months', 'day', 'month', 'year'));
                 $this->render('viewdateindex');              
             }
+        }
+        
+        public function calender($year=null){
+            $pastDays=array();
+            $conditions['History.year'] = $year;
+            
+            $filter = array(
+                'conditions' => $conditions,
+                'order' => array('History.created DESC')
+            );
+            $Histories = $this->History->find('all', $filter);
+            foreach($Histories as $History){
+                $pastDays[$History['History']['year']][$History['History']['month']][$History['History']['day']]=true;
+            }
+
+            $this->set('title_for_layout', 'Kalender '.$year);
+            $this->set(compact('year','pastDays'));
+            $this->layout = 'default.calender';
         }
 }
