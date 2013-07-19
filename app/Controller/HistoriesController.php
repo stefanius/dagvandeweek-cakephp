@@ -201,13 +201,19 @@ class HistoriesController extends AppController {
                 'conditions' => $conditions,
                 'order' => array('History.created DESC')
             );
+            
+            $Yearinfo=array();
             $Histories = $this->History->find('all', $filter);
             foreach($Histories as $History){
                 $pastDays[$History['History']['year']][$History['History']['month']][$History['History']['day']]=true;
+                
+                if($History['History']['month']=='00' && $History['History']['day']){
+                    $Yearinfo=$History;
+                }
             }
             $description = $year . ' was een TOP jaar! Hier vindt u de kalender van '.$year.'. Op Dag Van De Week kunt u ook kijken naar de historische details uit '.$year.'!';
             $this->set('title_for_layout', 'Kalender '.$year);
-            $this->set(compact('year','pastDays', 'description'));
+            $this->set(compact('year','pastDays', 'description', 'Yearinfo'));
             $this->layout = 'default.calender';
         }
 }
