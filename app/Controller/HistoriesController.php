@@ -205,9 +205,9 @@ class HistoriesController extends AppController {
             foreach($Histories as $History){
                 $pastDays[$History['History']['year']][$History['History']['month']][$History['History']['day']]=true;
             }
-
+            $description = $year . ' was een TOP jaar! Hier vindt u de kalender van '.$year.'. Op Dag Van De Week kunt u ook kijken naar de historische details uit '.$year.'!';
             $this->set('title_for_layout', 'Kalender '.$year);
-            $this->set(compact('year','pastDays'));
+            $this->set(compact('year','pastDays', 'description'));
             $this->layout = 'default.calender';
         }
 }
