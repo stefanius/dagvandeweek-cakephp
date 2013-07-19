@@ -1,5 +1,9 @@
 <h1>Kalender <?php echo $year;?></h1>
 <?php
+if(isset($Yearinfo['History']['pagecontent'])){
+    echo $Yearinfo['History']['pagecontent'];
+}
+
 $months     = array('01' => 'Januari', '02' => 'Februari', '03' => 'Maart', '04' => 'April', '05' => 'Mei', '06' => 'Juni', '07' => 'Juli','08' => 'Augustus', '09' => 'September', '10' => 'Oktober', '11' => 'November', '12' => 'December');
 $weekdays    = array('maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag','zondag');
 

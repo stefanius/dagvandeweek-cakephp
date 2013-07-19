@@ -8,13 +8,7 @@
                         <?php echo $this->Session->flash(); ?>
 
                         <?php echo $this->fetch('content'); ?>
-                        <?php 
-                            if(isset($showwhatislink)){
-                                if($showwhatislink===true){
-                                    echo $this->element('watislink'); 
-                                }                                                
-                            }
-                        ?>
+  
                     </div><!--/span-->
                     
 	            <div class="span2 hidden-phone">
