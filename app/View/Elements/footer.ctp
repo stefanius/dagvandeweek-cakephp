@@ -20,6 +20,7 @@
 </ul>
 <ul class="nav nav-list">
     <li class="nav-header">Terug naar</li>
+    <li><?php echo $this->Html->link('1911', '/historie/1911'); ?></li>
     <li><?php echo $this->Html->link('1944', '/historie/1944'); ?></li>
     <li><?php echo $this->Html->link('1980', '/historie/1980'); ?></li>
     <li><?php echo $this->Html->link('2000', '/historie/2000'); ?></li>
