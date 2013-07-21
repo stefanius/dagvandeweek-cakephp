@@ -129,6 +129,7 @@ class HistoriesController extends AppController {
             if(!is_null($year)){
                 if(strlen($year)==4){
                     $conditions['History.year'] = $year;
+                    $conditions['NOT']= array('History.day' => array('00'));
                     $canonical.='/'.$conditions['History.year'];
                 }else{
                     throw new BadRequestException('Het opgegeven jaartal dient uit 4 cijfers te bestaan.');
@@ -170,26 +171,41 @@ class HistoriesController extends AppController {
                 'order' => array('History.created DESC')
             );
             
-            if($singleitem==true){
-                $History = $this->History->find('first', $filter);
-                $this->set('title_for_layout', $History['History']['title']);
-                $this->set('description',  substr( $History['History']['pagecontent'], 0,159));
-                $this->set(compact('History','months',  'day', 'month', 'year'));
-            }else{
+            if(is_null($year)){
+                $filter = array(
+                    'fields' => array('DISTINCT (History.year)'),
+                    'order' => array('History.year DESC'),
+                    'conditions' => array('NOT' => array('History.day' => array('00')))
+                );   
+                
                 $History = $this->History->find('all', $filter);
-                if(array_key_exists('History.day', $conditions)){
-                    $pagetitle = 'Wat gebeurde er op '.((int)$conditions['History.day']).' '.$months[$conditions['History.month']].' '.$conditions['History.year'];
-                    $description = $pagetitle.'? Lees hier de geschiedenis van '.((int)$conditions['History.day']).' '.$months[$conditions['History.month']].' '.$conditions['History.year'].' op Dag Van De Week. Lees over alle dagen uit '.$conditions['History.year'].'! Lees hier het nieuws van '.((int)$conditions['History.day']).' '.$months[$conditions['History.month']].'!';
-                }elseif(array_key_exists('History.month', $conditions)){
-                    $pagetitle = 'Wat gebeurde er in de maand '.$months[$conditions['History.month']].' '.$conditions['History.year'];
-                    $description = $pagetitle.'? Lees alles wat er in '.$months[$conditions['History.month']].' '.$conditions['History.year'].' is gebeurd op Dag Van De Week. Het verleden in beeld. Al het nieuws uit '.$months[$conditions['History.month']].' '.$conditions['History.year'].' online!';
+                $this->set('description', 'Wat gebeurde er in een bepaald jaar? Zoek het hier uit en neem een kijkje in het verleden op Dag Van De Week!');
+                $this->set('History', $History);
+                $this->set('title_for_layout', 'DagVanDeWeek Vandaag in het Verleden - Historisch Jaaroverzicht');
+                $this->set('pagetitle', 'Vandaag in het Verleden - Historisch Jaaroverzicht');
+                $this->render('yearindex'); 
+            }else{
+                if($singleitem==true){
+                    $History = $this->History->find('first', $filter);
+                    $this->set('title_for_layout', $History['History']['title']);
+                    $this->set('description',  substr( $History['History']['pagecontent'], 0,159));
+                    $this->set(compact('History','months',  'day', 'month', 'year'));
                 }else{
-                    $pagetitle = 'Wat gebeurde er in het jaar '.$conditions['History.year'];
-                    $description = 'Lees hier alles uit '.$conditions['History.year'].'! Het nieuws en de geschiedenis van '.$conditions['History.year'].'! Lees alles op Dag Van De Week. Ook voor het jaar  '.$conditions['History.year'];
-                }
-                $this->set('title_for_layout', $pagetitle);
-                $this->set(compact('History', 'pagetitle', 'description', 'canonical', 'months', 'day', 'month', 'year'));
-                $this->render('viewdateindex');              
+                    $History = $this->History->find('all', $filter);
+                    if(array_key_exists('History.day', $conditions)){
+                        $pagetitle = 'Wat gebeurde er op '.((int)$conditions['History.day']).' '.$months[$conditions['History.month']].' '.$conditions['History.year'];
+                        $description = $pagetitle.'? Lees hier de geschiedenis van '.((int)$conditions['History.day']).' '.$months[$conditions['History.month']].' '.$conditions['History.year'].' op Dag Van De Week. Lees over alle dagen uit '.$conditions['History.year'].'! Lees hier het nieuws van '.((int)$conditions['History.day']).' '.$months[$conditions['History.month']].'!';
+                    }elseif(array_key_exists('History.month', $conditions)){
+                        $pagetitle = 'Wat gebeurde er in de maand '.$months[$conditions['History.month']].' '.$conditions['History.year'];
+                        $description = $pagetitle.'? Lees alles wat er in '.$months[$conditions['History.month']].' '.$conditions['History.year'].' is gebeurd op Dag Van De Week. Het verleden in beeld. Al het nieuws uit '.$months[$conditions['History.month']].' '.$conditions['History.year'].' online!';
+                    }else{
+                        $pagetitle = 'Wat gebeurde er in het jaar '.$conditions['History.year'];
+                        $description = 'Lees hier alles uit '.$conditions['History.year'].'! Het nieuws en de geschiedenis van '.$conditions['History.year'].'! Lees alles op Dag Van De Week. Ook voor het jaar  '.$conditions['History.year'];
+                    }
+                    $this->set('title_for_layout', $pagetitle);
+                    $this->set(compact('History', 'pagetitle', 'description', 'canonical', 'months', 'day', 'month', 'year'));
+                    $this->render('viewdateindex');              
+                }                
             }
         }
         
