@@ -9,7 +9,7 @@
 		echo $this->Form->input('week');
 		echo $this->Form->input('title');
 		echo $this->Form->input('description');
-		echo $this->Fck->ckedit('topper.pagecontent');
+		echo $this->Fck->ckedit('topper.pagecontent', $this->request->data['Topper']['pagecontent']);
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
