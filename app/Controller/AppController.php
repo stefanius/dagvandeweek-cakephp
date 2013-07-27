@@ -43,7 +43,7 @@ class AppController extends Controller {
         'Session'
     );
     
-    public $helpers = array('Html', 'Form', 'Session', 'BootstrapCake.Bootstrap');
+    public $helpers = array('Html', 'Form', 'Session', 'BootstrapCake.Bootstrap', 'GoogleMap');
 
     public function beforeFilter() {
 
@@ -58,6 +58,4 @@ class AppController extends Controller {
 
         $this->set('authUser',$authUser);
     }
-    
-
 }

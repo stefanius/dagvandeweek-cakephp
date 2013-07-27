@@ -33,7 +33,8 @@
                 echo $this->fetch('meta')."\n";
                 echo $this->fetch('css')."\n";
                 echo $this->fetch('script')."\n";
-                echo $this->Html->css('custom.aditions.twitter')."\n";     
+                echo $this->Html->css('custom.aditions.twitter')."\n";   
+                echo $this->Html->script('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false');
     	?>
 
 	</head>
