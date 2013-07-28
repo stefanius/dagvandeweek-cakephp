@@ -14,15 +14,27 @@
 if(is_array($History['Marker'])){
     if(count($History['Marker']) > 0){
         echo '<h2>Op de Kaart</h2>';
+        $lng=0.0;
+        $lat=0.0;
+        $divider=0;
+        foreach($History['Marker'] as $M){
+            $lat+=$M['lat'];
+            $lng+=$M['lng'];
+            $divider++;
+        }
+        
+        $lng=$lng/$divider;
+        $lat=$lat/$divider;
+
         echo $this->GoogleMap->map(array(
             'id' => 'map_history',
             'width' => '100%',
             'height' => '400px',
             'localize' => false,
             'marker' => false,
-            'latitude' => $History['Marker'][0]['lat'],
-            'longitude' => $History['Marker'][0]['lng'],
-            'zoom' => 9,
+            'latitude' =>$lat,
+            'longitude' => $lng,
+            'zoom' => 10,
         ));  
         foreach($History['Marker'] as $M){
             $marker_options = array(
