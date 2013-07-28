@@ -5,7 +5,9 @@
 
 
 
-<?php echo $this->GoogleMap->map(array(
+<?php
+
+/*echo $this->GoogleMap->map(array(
     'id' => 'map_canvas',
     'width' => '250px',
     'height' => '250px',
@@ -23,4 +25,4 @@
     'markerShadow' => 'http://google-maps-icons.googlecode.com/files/shadow.png',
     'infoWindow' => false,
     'windowText' => 'Uw internet locatie'
-  )); ?>
+  )); */?>

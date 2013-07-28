@@ -47,8 +47,8 @@ class HistoryFixture extends CakeTestFixture {
 			'urlpart' => 'Lorem ipsum dolor sit amet',
 			'title' => 'Lorem ipsum dolor sit amet',
 			'pagecontent' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
-			'created' => '2013-06-30 22:04:52',
-			'modified' => '2013-06-30 22:04:52'
+			'created' => '2013-07-28 16:49:35',
+			'modified' => '2013-07-28 16:49:35'
 		),
 	);
 

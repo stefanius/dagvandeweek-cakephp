@@ -1,5 +1,8 @@
 <?php
 /*
+ http://bakery.cakephp.org/articles/marcferna/2012/09/08/google_maps_helper
+ https://github.com/marcferna/CakePHP-GoogleMapHelper
+ * 
   CakePHP Google Map V3 - Helper to CakePHP framework that integrates a Google Map in your view
   using Google Maps API V3.
 

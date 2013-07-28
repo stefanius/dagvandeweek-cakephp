@@ -13,7 +13,9 @@ class HistoryTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.history'
+		'app.history',
+		'app.marker',
+		'app.markers_history'
 	);
 
 /**
