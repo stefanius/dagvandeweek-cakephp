@@ -13,6 +13,7 @@
 
 if(is_array($History['Marker'])){
     if(count($History['Marker']) > 0){
+        echo '<h2>Op de Kaart</h2>';
         echo $this->GoogleMap->map(array(
             'id' => 'map_history',
             'width' => '100%',
