@@ -25,27 +25,27 @@ if(is_array($History['Marker'])){
         
         $lng=$lng/$divider;
         $lat=$lat/$divider;
-
         echo $this->GoogleMap->map(array(
-            'id' => 'map_history',
             'width' => '100%',
             'height' => '400px',
             'localize' => false,
             'marker' => false,
             'latitude' =>$lat,
             'longitude' => $lng,
-            'zoom' => 10,
-        ));  
+            'zoom' => 10, 
+            'custom'=>'disableDefaultUI:true'
+        ));
+
         foreach($History['Marker'] as $M){
             $marker_options = array(
                 'showWindow' => true,
-                'windowText' => $M['description'],
+                'windowText' => '<p><b>'.$M['title'].'</b></p><p>' .$M['description'].'</p>',
                 'markerTitle' => $M['title'],
                 'markerIcon' => 'http://labs.google.com/ridefinder/images/mm_20_purple.png',
                 'markerShadow' => 'http://labs.google.com/ridefinder/images/mm_20_purpleshadow.png',
             ); 
-            echo $this->GoogleMap->addMarker("map_history", $M['id'], array('latitude' => $M['lat'], 'longitude' => $M['lng']), $marker_options);
-        }        
+            echo $this->GoogleMap->addMarker("map_canvas", $M['id'], array('latitude' => $M['lat'], 'longitude' => $M['lng']), $marker_options);
+        }    
     }
 }
 ?>
