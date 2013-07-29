@@ -21,3 +21,15 @@
 		<li><?php echo $this->Html->link(__('New History'), array('controller' => 'histories', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+
+<script>
+   var geostring = window.prompt("Google Maps GEO info (maag leeg zijn)","");
+    
+    if(geostring.length > 5){
+        var splitted = geostring.split('@');
+        var latlng  = splitted[1].split(',');
+        $("#MarkerLng" ).val(latlng[1]);
+        $("#MarkerLat" ).val(latlng[0]);
+        $("#MarkerTitle" ).val(splitted[0]);
+    }
+</script>
