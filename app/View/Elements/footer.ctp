@@ -62,6 +62,6 @@
 
 <ul class="nav nav-list"><li>
 <a title="Clicky Web Analytics" href="http://clicky.com/100638034">
-   <img alt="Clicky Web Analytics" src="http://cdn.staticstuff.net/media/links/clicky-125.gif" border="0" style="vertical-align: top;" />
+   <img alt="Clicky Web Analytics" src="http://cdn.staticstuff.net/media/links/badge.gif" border="0" style="vertical-align: top;" />
 </a>
 </li></ul>
