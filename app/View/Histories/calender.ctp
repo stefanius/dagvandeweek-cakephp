@@ -1,4 +1,6 @@
 <?php
+    $this->Html->addCrumb('Overzicht Kalenders', '/kalender');
+    $this->Html->addCrumb('Kalender '.$year, '/kalender/'.$year);
     $leapyear = date('L', mktime(1, 1, 1, 1, 1, $year));
 ?>
 
@@ -55,9 +57,9 @@ foreach($months as $key=>$value){
         echo '<td>';   
         
         if(isset($pastDays[$year][$key][$day])){
-            echo $this->Html->link($day , '//historie/'.$year.'/'.$key.'/'.$day, array('rel'=>'follow'));
+            echo $this->Html->link($day , '/historie/'.$year.'/'.$key.'/'.$day, array('rel'=>'follow'));
         }elseif( isset($pastDays[$year][$key]['0'.$day])){
-            echo $this->Html->link($day , '//historie/'.$year.'/'.$key.'/0'.$day, array('rel'=>'follow'));
+            echo $this->Html->link($day , '/historie/'.$year.'/'.$key.'/0'.$day, array('rel'=>'follow'));
         }else{
             echo $day;
         }

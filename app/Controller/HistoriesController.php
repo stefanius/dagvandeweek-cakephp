@@ -210,26 +210,39 @@ class HistoriesController extends AppController {
         }
         
         public function calender($year=null){
-            $pastDays=array();
-            $conditions['History.year'] = $year;
             
-            $filter = array(
-                'conditions' => $conditions,
-                'order' => array('History.created DESC')
-            );
-            
-            $Yearinfo=array();
-            $Histories = $this->History->find('all', $filter);
-            foreach($Histories as $History){
-                $pastDays[$History['History']['year']][$History['History']['month']][$History['History']['day']]=true;
+            if(is_null($year)){
+                $description = 'Elke Dag Van De Week is er een verleden. Van elk jaar een kalender op Dag Van De Week. Ontdek de historie en bekijk oude Kalenders op Dag Van De Week.';
                 
-                if($History['History']['month']=='00' && $History['History']['day']){
-                    $Yearinfo=$History;
+                $filter = array(
+                    'fields' => array('DISTINCT (History.year)'),
+                    'order' => array('History.created DESC')
+                );
+                $Years = $this->History->find('all', $filter);
+                $this->set(compact('Years', 'description'));
+                $this->render('calenderindex'); 
+            }else{
+                $pastDays=array();
+                $conditions['History.year'] = $year;
+                
+                $filter = array(
+                    'conditions' => $conditions,
+                    'order' => array('History.created DESC')
+                );
+
+                $Yearinfo=array();
+                $Histories = $this->History->find('all', $filter);
+                foreach($Histories as $History){
+                    $pastDays[$History['History']['year']][$History['History']['month']][$History['History']['day']]=true;
+
+                    if($History['History']['month']=='00' && $History['History']['day']){
+                        $Yearinfo=$History;
+                    }
                 }
+                $description = $year . ' was een TOP jaar! Hier vindt u de kalender van '.$year.'. Op Dag Van De Week kunt u ook kijken naar de historische details uit '.$year.'!';
+                $this->set('title_for_layout', 'Kalender '.$year);
+                $this->set(compact('year','pastDays', 'description', 'Yearinfo'));
+                $this->layout = 'default.calender';                
             }
-            $description = $year . ' was een TOP jaar! Hier vindt u de kalender van '.$year.'. Op Dag Van De Week kunt u ook kijken naar de historische details uit '.$year.'!';
-            $this->set('title_for_layout', 'Kalender '.$year);
-            $this->set(compact('year','pastDays', 'description', 'Yearinfo'));
-            $this->layout = 'default.calender';
         }
 }
