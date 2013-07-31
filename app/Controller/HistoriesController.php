@@ -220,6 +220,7 @@ class HistoriesController extends AppController {
                 );
                 $Years = $this->History->find('all', $filter);
                 $this->set(compact('Years', 'description'));
+                $this->set('title_for_layout', 'Kalender Overzicht');
                 $this->render('calenderindex'); 
             }else{
                 $pastDays=array();
