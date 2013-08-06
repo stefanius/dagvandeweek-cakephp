@@ -12,6 +12,7 @@ class Content extends AppModel {
  * @var mixed False or table name
  */
 	public $useTable = 'content';
+       
 
 /**
  * Display field

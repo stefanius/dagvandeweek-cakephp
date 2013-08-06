@@ -43,13 +43,13 @@ class AppController extends Controller {
         'Session'
     );
     
-    public $helpers = array('Html', 'Form', 'Session', 'BootstrapCake.Bootstrap', 'GoogleMap');
+    public $helpers = array('Html', 'Form', 'Session', 'BootstrapCake.Bootstrap', 'GoogleMap', 'SimpleCms.Seo');
 
     public function beforeFilter() {
 
         $this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
         $this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login');
-        $this->Auth->loginRedirect = array('controller' => 'contents', 'action' => 'add');
+        $this->Auth->loginRedirect = array('controller' => 'pages', 'action' => 'home');
         
         $authUser = $this->Auth->user();
         if(is_null($authUser) || $authUser===false){

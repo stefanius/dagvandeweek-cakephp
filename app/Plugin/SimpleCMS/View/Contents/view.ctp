@@ -41,6 +41,12 @@
 			<?php echo h($content['Content']['modified']); ?>
 			&nbsp;
 		</dd>
+                
+		<dt><?php echo __('Metadata'); ?></dt>
+		<dd>
+			<?php echo $this->Form->input('', array('type' => 'textarea', 'value'=> $this->Seo->generate($metadata))); ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 <div class="actions">

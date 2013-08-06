@@ -6,18 +6,11 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
             
             <?php
-                
-                echo $this->Html->meta('description',$description )."\n";    
-
-                if(isset($canonical)){
-                    echo $this->Html->meta('canonical', $canonical, array('rel'=>'canonical', 'type'=>null, 'title'=>null))."\n";
-                }
-                
-                if(isset($robots)){
-                    echo $this->Html->meta(array('name' => 'robots', 'content' => $robots))."\n";
-                }else{
-                    echo $this->Html->meta(array('name' => 'robots', 'content' => 'INDEX,FOLLOW'))."\n";
-                }
+                if(isset($metadata)){
+                    if(is_array($metadata)){
+                        echo $this->Seo->generate($metadata);
+                    }
+                }            
             ?>
             <meta name="revisit-after" content="1 days">
             <meta name="googlebot" content="noodp">

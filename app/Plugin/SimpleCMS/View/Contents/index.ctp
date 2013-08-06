@@ -1,27 +1,19 @@
 <div class="contents index">
-	<h2><?php echo __('Contents'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<h2><?php echo __("Pagina's"); ?></h2>
+	<table cellpadding="0" cellspacing="0" class="table table-striped">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('title'); ?></th>
-			<th><?php echo $this->Paginator->sort('description'); ?></th>
-			<th><?php echo $this->Paginator->sort('pagecontent'); ?></th>
 			<th><?php echo $this->Paginator->sort('section'); ?></th>
 			<th><?php echo $this->Paginator->sort('urlpart'); ?></th>
-			<th><?php echo $this->Paginator->sort('created'); ?></th>
-			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($contents as $content): ?>
 	<tr>
-		<td><?php echo h($content['Content']['id']); ?>&nbsp;</td>
-		<td><?php echo h($content['Content']['title']); ?>&nbsp;</td>
-		<td><?php echo h($content['Content']['description']); ?>&nbsp;</td>
-		<td><?php echo h($content['Content']['pagecontent']); ?>&nbsp;</td>
-		<td><?php echo h($content['Content']['section']); ?>&nbsp;</td>
-		<td><?php echo h($content['Content']['urlpart']); ?>&nbsp;</td>
-		<td><?php echo h($content['Content']['created']); ?>&nbsp;</td>
-		<td><?php echo h($content['Content']['modified']); ?>&nbsp;</td>
+		<td><?php echo h($content['Content']['id']); ?>&nbsp;&nbsp;</td>
+		<td><?php echo h($content['Content']['title']); ?>&nbsp;&nbsp;</td>
+		<td><?php echo h($content['Content']['section']); ?>&nbsp;&nbsp;</td>
+		<td><?php echo h($content['Content']['urlpart']); ?>&nbsp;&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $content['Content']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $content['Content']['id'])); ?>
@@ -39,14 +31,8 @@
 	<div class="paging">
 	<?php
 		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
+		echo $this->Paginator->numbers(array('separator' => ' '));
 		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
 	?>
 	</div>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Content'), array('action' => 'add')); ?></li>
-	</ul>
 </div>

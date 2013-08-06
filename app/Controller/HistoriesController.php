@@ -12,8 +12,7 @@ class HistoriesController extends AppController {
         $this->Auth->allow('viewdate', 'calender');
        
     }   
-    
-    
+       
 /**
  * index method
  *

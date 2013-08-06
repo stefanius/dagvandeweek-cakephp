@@ -1,7 +1,7 @@
 <div class="contents form">
-<?php echo $this->Form->create('Content'); ?>
+<?php echo $this->Form->create('Section'); ?>
 	<fieldset>
-		<legend><?php echo __('Pagina Toevoegen'); ?></legend>
+		<legend><?php echo __('Sectie Toevoegen'); ?></legend>
 	<?php
             $fieldSettings = array('description' => array('type' => 'textarea', "onkeyup"=>"countChar(this, 170)"));
             echo $this->element('autoform',array("fieldSettings"=>$fieldSettings) ); 

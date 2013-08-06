@@ -24,9 +24,6 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-// Setup a 'default' cache configuration for use in the application.
-Cache::config('default', array('engine' => 'File'));
-
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
  *
@@ -72,9 +69,7 @@ Cache::config('default', array('engine' => 'File'));
  *
  */
 
-CakePlugin::load('BootstrapCake');
-//CakePlugin::load('QuickAppsCMS');
-CakePlugin::load('AclExtras');
+
 
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter . By Default CakePHP bundles two filters:
@@ -92,24 +87,4 @@ CakePlugin::load('AclExtras');
  *
  * ));
  */
-Configure::write('Dispatcher.filters', array(
-	'AssetDispatcher',
-	'CacheDispatcher'
-));
 
-/**
- * Configures default file logging options
- */
-App::uses('CakeLog', 'Log');
-CakeLog::config('debug', array(
-	'engine' => 'FileLog',
-	'types' => array('notice', 'info', 'debug'),
-	'file' => 'debug',
-));
-CakeLog::config('error', array(
-	'engine' => 'FileLog',
-	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
-	'file' => 'error',
-));
-
-CakePlugin::load('SimpleCms', array('bootstrap' => false, 'routes' => false));

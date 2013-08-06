@@ -26,17 +26,11 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
-        Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 
-        Router::connect('/nieuws', array('controller' => 'contents', 'action' => 'nieuwsindex'));
-        Router::connect('/watis', array('controller' => 'contents', 'action' => 'watisindex')); 
+        Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
         Router::connect('/topper-van-de-week', array('controller' => 'toppers', 'action' => 'weektoppermainpage'));
         
         Router::connect('/topper-van-de-week/*', array('controller' => 'toppers', 'action' => 'showtopper'));
-        
-        Router::connect('/watis/*', array('controller' => 'contents', 'action' => 'whatis'));
-        Router::connect('/nieuws/*', array('controller' => 'contents', 'action' => 'nieuws'));       
-        Router::connect('/nieuws/p/', array('controller' => 'contents', 'action' => 'nieuwsindex'));
         Router::connect('/zaagmans', array('controller' => 'checkday', 'action' => 'zaagmans'));
         Router::connect('/gehaktdag', array('controller' => 'checkday', 'action' => 'gehaktdag'));
         Router::connect('/bieruur', array('controller' => 'checkday', 'action' => 'bieruur'));
@@ -55,10 +49,21 @@
         Router::connect('/ishetvandaag/vandaag', array('controller' => 'checkday', 'action' => 'weekday', '8'));
         Router::connect('/ishetvandaag/gisteren', array('controller' => 'checkday', 'action' => 'weekday', '9'));
         Router::connect('/ishetvandaag/morgen', array('controller' => 'checkday', 'action' => 'weekday', '10'));
+        
+        Router::connect('/users/login', array('controller' => 'users', 'action' => 'login'));
+        Router::connect('/users/logout', array('controller' => 'users', 'action' => 'logout'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
+        Router::connect('/simple_cms/sections', array('plugin'=>'simple_cms', 'controller' => 'sections', 'action'=>'index'));
+        Router::connect('/simple_cms/contents', array('plugin'=>'simple_cms', 'controller' => 'contents', 'action'=>'index'));
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+        Router::connect('/:section', 
+                array('plugin'=>'simple_cms', 'controller' => 'contents', 'action' => 'sectionindex'), 
+                array('pass' => array('section')));
+        Router::connect('/:section/:urlpart', 
+                array('plugin'=>'simple_cms', 'controller' => 'contents', 'action' => 'load'), 
+                array('pass' => array('section', 'urlpart')));
         
 
 /**

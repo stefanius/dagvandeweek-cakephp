@@ -1,10 +1,10 @@
 <?php
-App::uses('AppModel', 'Model');
+
 /**
  * Content Model
  *
  */
-class Content extends AppModel {
+class Content extends SimpleCmsAppModel {
 
 /**
  * Use table
@@ -12,7 +12,7 @@ class Content extends AppModel {
  * @var mixed False or table name
  */
 	public $useTable = 'content';
-
+        public $belongsTo = 'Section';
 /**
  * Display field
  *
@@ -20,22 +20,4 @@ class Content extends AppModel {
  */
 	public $displayField = 'title';
         
-       /* public function afterFind(array $results, boolean $primary = false){
-            foreach ($results as $key => $val) {
-                if (isset($val['Content']['index']) && isset($val['Content']['follow'])) {
-                    $follow='NOFOLLOW';
-                    $index='NOINDEX';
-                    
-                    if($val['Content']['follow']===1){
-                        $follow='FOLLOW';
-                    }
-                    
-                    if($val['Content']['index']===1){
-                        $index='INDEX';
-                    }  
-                    $val['Content']['robots'] = $index.', '.$follow;
-                }
-            }            
-        }*/
-
 }

@@ -81,3 +81,15 @@ div.kalender h2{
 div.kalender{
     width: 280px;
 }
+
+input{
+    width: 100%;
+}
+
+textarea{
+    width: 100%;
+}
+
+select{
+    width: 100%;
+}
