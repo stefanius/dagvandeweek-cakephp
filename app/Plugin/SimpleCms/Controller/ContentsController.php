@@ -131,6 +131,7 @@ class ContentsController extends SimpleCmsAppController {
                         throw new NotFoundException(__('Invalid content'));
                 } 
                 $metadata = $this->generateMetaArray($Content, $Section);
+                $this->set('title_for_layout',$Content['Content']['title'].'' );
 		$this->set(compact('Content', 'metadata' ));   
 	}
 
