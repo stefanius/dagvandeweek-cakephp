@@ -18,6 +18,5 @@ class Content extends SimpleCmsAppModel {
  *
  * @var string
  */
-	public $displayField = 'title';
-        
+	public $displayField = 'title';        
 }
