@@ -1,1 +1,0 @@
-<i class="icon-<?php echo $allowed ? 'ok' : 'remove'; ?>"></i>
