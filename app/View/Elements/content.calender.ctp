@@ -22,7 +22,7 @@
                                     
                                     foreach($years as $yr){ 
                                         if($yr > 1500 && $yr < 2020){
-                                            echo '<li>'.$this->Html->link('Kalender '.$yr , '/kalender/'.$yr.'/'.$key.'/'.$day, array('rel'=>'follow')).'</li>';
+                                            echo '<li>'.$this->Html->link('Kalender '.$yr , '/kalender/'.$yr, array('rel'=>'follow')).'</li>';
                                         }                                
                                     }
                                 }
