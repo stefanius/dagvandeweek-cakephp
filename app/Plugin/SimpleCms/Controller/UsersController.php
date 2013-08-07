@@ -5,7 +5,7 @@ App::uses('AppController', 'Controller');
  *
  * @property User $User
  */
-class UsersController extends AppController {
+class UsersController extends SimpleCmsAppController {
 
         public function beforeFilter() {
             parent::beforeFilter();

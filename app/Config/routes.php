@@ -50,8 +50,10 @@
         Router::connect('/ishetvandaag/gisteren', array('controller' => 'checkday', 'action' => 'weekday', '9'));
         Router::connect('/ishetvandaag/morgen', array('controller' => 'checkday', 'action' => 'weekday', '10'));
         
-        Router::connect('/users/login', array('controller' => 'users', 'action' => 'login'));
-        Router::connect('/users/logout', array('controller' => 'users', 'action' => 'logout'));
+        Router::connect('/users/login', array('plugin'=>'simple_cms', 'controller' => 'users', 'action' => 'login'));
+        Router::connect('/users/logout', array('plugin'=>'simple_cms', 'controller' => 'users', 'action' => 'logout'));
+        Router::connect('/users/index', array('plugin'=>'simple_cms', 'controller' => 'users', 'action' => 'index'));
+        Router::connect('/users/add', array('plugin'=>'simple_cms', 'controller' => 'users', 'action' => 'add'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

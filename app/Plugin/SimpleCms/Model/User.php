@@ -5,7 +5,7 @@ App::uses('AppModel', 'Model', 'AuthComponent', 'Controller/Component');
  *
  * @property Group $Group
  */
-class User extends AppModel {
+class User extends SimpleCmsAppModel {
 
 /**
  * Display field
