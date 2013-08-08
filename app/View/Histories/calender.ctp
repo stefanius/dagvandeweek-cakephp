@@ -32,7 +32,7 @@ foreach($months as $key=>$value){
 
     echo '<h2>'.$value.' '.$year.'</h2>';
     echo '<table>';
-    echo '<tr><th>M</th><th>D</th><th>W</th><th>D</th><th>V</th><th>Z</th><th>Z</th></tr><tr>';
+    echo '<tr><th>M</th><th>D</th><th>W</th><th>D</th><th>V</th><th>Z</th><th>Z</th><th>W#</th></tr><tr>';
     $firstday = date('w', mktime(0,0,0,$key,1,$year));
 
     for($i = 1; $i <= 6; $i++)
@@ -67,6 +67,7 @@ foreach($months as $key=>$value){
         echo '</td>';  
         if($weekday == 0)
         {
+            echo '<td>'.date('W', mktime(0,0,0,$key,$day,$year)).'</td>';
             echo '</tr>';
         }    
     }
