@@ -65,7 +65,7 @@ div#footer p {
 }
 
 div.kalender table{
-    text-align: right;
+    text-align: center;
 }
 
 div.kalender table td{
@@ -92,4 +92,17 @@ textarea{
 
 select{
     width: 100%;
+}
+
+td.weeknumber, th.weeknumber{
+    color:#0000ff;
+}
+
+td.today {
+    -moz-border-radius: 36px; 
+    -webkit-border-radius: 36px; 
+    border-radius: 36px; 
+    background-color: #FF00FF; 
+
+
 }
