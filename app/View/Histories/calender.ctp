@@ -27,7 +27,7 @@ $months     = array('01' => 'Januari', '02' => 'Februari', '03' => 'Maart', '04'
 $weekdays    = array('maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag','zondag');
 $todayTimeStamp= mktime(0,0,0,date('m'),date('d'),date('Y'));
 foreach($months as $key=>$value){
-    echo '<div class="kalender">';
+    /*echo '<div class="kalender">';
     $days = range(1,date('t', mktime(0,0,0,$key,1,$year)));
 
     echo '<h2>'.$value.' '.$year.'</h2>';
@@ -78,5 +78,7 @@ foreach($months as $key=>$value){
     }
 
     echo '</table>';    
-    echo '</div>';
+    echo '</div>';*/
+    
+    echo $this->Calendar->generatemonth($key, $year);
 }

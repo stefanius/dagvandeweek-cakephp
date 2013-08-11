@@ -43,7 +43,7 @@ class AppController extends Controller {
         'Session'
     );
     
-    public $helpers = array('Html', 'Form', 'Session', 'BootstrapCake.Bootstrap', 'GoogleMap', 'SimpleCms.Seo');
+    public $helpers = array('Html', 'Form', 'Session', 'BootstrapCake.Bootstrap', 'GoogleMap', 'SimpleCms.Seo', 'SimpleCms.Calendar');
 
     public function beforeFilter() {
 
