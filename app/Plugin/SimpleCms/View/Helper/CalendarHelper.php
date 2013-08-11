@@ -2,7 +2,7 @@
 
 class CalendarHelper extends AppHelper { 
     var $weeknumberBefore = true;
-    var $weeknumberAfter = true;
+    var $weeknumberAfter = false;
     var $lang = 'nl';
     var $weeknumberHeaderText = 'W#';
     var $title = '#MONTH# #YEAR#';

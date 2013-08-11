@@ -64,21 +64,21 @@ div#footer p {
         margin:0;
 }
 
-div.kalender table{
+div.calendar-wrapper table{
     text-align: center;
 }
 
-div.kalender table td{
+div.calendar-wrapper table td{
     width: 40px;
     height: 30px;
     font-size: 120%; 
 }
 
-div.kalender h2{
+div.calendar-wrapper h2{
     text-align: center;
 }
 
-div.kalender{
+div.calendar-wrapper{
     width: 280px;
 }
 
@@ -94,15 +94,15 @@ select{
     width: 100%;
 }
 
-td.weeknumber, th.weeknumber{
+div.calendar-wrapper td.weeknumber, div.calendar-wrapper th.weeknumber{
     color:#0000ff;
+    font-size: 70%;
+    font-style: italic;
 }
 
-td.today {
+div.calendar-wrapper td.today {
     -moz-border-radius: 36px; 
     -webkit-border-radius: 36px; 
     border-radius: 36px; 
     background-color: #FF00FF; 
-
-
 }
