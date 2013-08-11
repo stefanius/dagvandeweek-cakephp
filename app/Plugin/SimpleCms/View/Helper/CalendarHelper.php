@@ -44,10 +44,16 @@ class CalendarHelper extends AppHelper {
         '06'=>'Za',
         '07'=>'Zo',
     ));    
+    
     function __construct() {
         $this->todayTimeStamp = mktime(0,0,0,date('m'),date('d'),date('Y'));
     }
     
+    /**
+     *
+     * @param type $toggle
+     * @throws CakeException 
+     */
     function setDisplayWeeknumberBefore($toggle){
         if(is_bool($toggle)){
             $this->weeknumberBefore=$toggle;
@@ -55,7 +61,12 @@ class CalendarHelper extends AppHelper {
             throw new CakeException();
         }
     }
-
+    
+    /**
+     *
+     * @param type $toggle
+     * @throws CakeException 
+     */
     function setDisplayWeeknumberAfter($toggle){
         if(is_bool($toggle)){
             $this->weeknumberAfter=$toggle;
@@ -64,6 +75,11 @@ class CalendarHelper extends AppHelper {
         }
     }
  
+    /**
+     *
+     * @param type $lang
+     * @throws CakeException 
+     */
     function setLang($lang){
         $lang=  strtolower($lang);
         if(array_key_exists($lang, $this->daysAbbreviation) && array_key_exists($lang, $this->days)  && array_key_exists($lang, $this->months)){
@@ -73,6 +89,10 @@ class CalendarHelper extends AppHelper {
         }
     }
 
+    /**
+     *
+     * @param type $element 
+     */
     function setTitleElement($element){
         $this->titleElement = strtolower($element);
     }
@@ -81,10 +101,18 @@ class CalendarHelper extends AppHelper {
         $this->title = strtolower($title);
     }
     
+    /**
+     *
+     * @param type $text 
+     */
     function setWeeknumberHeaderText($text){
         $this->weeknumberHeaderText=$text;
     }
     
+    /**
+     *
+     * @return type 
+     */
     private function generateDayHeader(){
         $row='';
         foreach($this->daysAbbreviation[$this->lang] as $d){
@@ -100,6 +128,15 @@ class CalendarHelper extends AppHelper {
         
         return '<tr>'.$row.'</tr>';
     }
+    
+    /**
+     *
+     * @param type $month
+     * @param type $year
+     * @param type $linkdays
+     * @param type $linkprop
+     * @return string 
+     */
     function generatemonth($month, $year, $linkdays=array(), $linkprop=false){
         
         $month=(int)$month;
