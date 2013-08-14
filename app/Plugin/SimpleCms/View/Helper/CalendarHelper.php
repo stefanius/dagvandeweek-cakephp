@@ -138,7 +138,6 @@ class CalendarHelper extends AppHelper {
      * @return string 
      */
     function generatemonth($month, $year, $linkdays=array(), $linkprop=false){
-        
         $month=(int)$month;
         if($month < 10){
             $month = '0'.(string)$month;
@@ -152,18 +151,24 @@ class CalendarHelper extends AppHelper {
         $rtrn.=  '<table>';
         $rtrn.=  $this->generateDayHeader();
         $firstday = date('w', mktime(0,0,0,$month,1,$year));
-        if($this->weeknumberBefore){
+
+       $firstday=(int)$firstday;
+
+        if($this->weeknumberBefore && $firstday > 1 ){
             $weeknumber = date('W', mktime(0,0,0,$month,1,$year));
             $rtrn.='<td class="weeknumber">'.$weeknumber.'</td>';
-        }
-        for($i = 1; $i <= 6; $i++)
-        {
-            if($i != $firstday)
+        }       
+       
+        if($firstday !== 1){
+            for($i = 1; $i <= 7; $i++)
             {
-                $rtrn.=  '<td></td>';
-            }else{
-                break;
-            }
+                if($i != $firstday)
+                {
+                    $rtrn.=  '<td></td>';
+                }else{
+                    break;
+                }
+            }            
         }
 
         foreach($days as $day)
@@ -190,9 +195,9 @@ class CalendarHelper extends AppHelper {
             $rtrn.=  '<td '.$todayclass.'>';   
             if(isset($linkdays[$year][$month][$day]) && $linkprop !== false){
                 $l = str_replace(array('#DAY#', '#YEAR#', '#MONTH#'), array($day,$year,$month), $linkprop);
-                $rtrn.=  $this->Html->link($day , $l, array('rel'=>'follow'));
+                $rtrn.=  $this->Html->link((int) $day , $l, array('rel'=>'follow'));
             }else{
-                $rtrn.=  $day;
+                $rtrn.=  (int)$day;
             }
 
             $rtrn.=  '</td>';
@@ -206,7 +211,7 @@ class CalendarHelper extends AppHelper {
                 $rtrn.=  '</tr>';
             }    
         }
-
+        
         $rtrn.=  '</table>';    
         $rtrn.=  '</div>';
         

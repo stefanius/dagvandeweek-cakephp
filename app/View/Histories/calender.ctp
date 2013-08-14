@@ -23,7 +23,10 @@ if(isset($Yearinfo['History']['pagecontent'])){
     }    
 }
 
+echo '<ul class="calendar-container">';
+
 for($i=1; $i<13;$i++){
     
-    echo $this->Calendar->generatemonth($i, $year);
+    echo '<li>'.$this->Calendar->generatemonth($i, $year).'</li>';
 }
+echo '</ul>';
