@@ -26,6 +26,7 @@ class CalendarHelper extends AppHelper {
                                 ));    
 
     var $days = array('nl' => array(
+        '00'=>'Zondag',
         '01'=>'Maandag',
         '02'=>'Dinsdag',
         '03'=>'Woensdag',
@@ -216,6 +217,37 @@ class CalendarHelper extends AppHelper {
         $rtrn.=  '</div>';
         
         return $rtrn;
+    }
+    
+    function generateTextLine($data){
+        if(!array_key_exists('year', $data) &&
+           !array_key_exists('month', $data) &&  
+           !array_key_exists('day', $data) && 
+           !array_key_exists('title', $data)){
+                throw new CakeException();
+        }
+        
+        $arrDates=array();
+        
+        foreach($data['month'] as $m){
+            foreach($data['day'] as $d){
+                $weekday = date('w', mktime(0,0,0,$m,$d,$data['year']));
+                $weekday=(int)$weekday;
+                $weekday='0'.$weekday;
+                
+                if($m < 10){
+                    $mo=(int)$m;
+                    $mo='0'.$m;
+                }else{
+                    $mo=$m;
+                }
+                $arrDates[] = $this->days['nl'][$weekday].'&nbsp;'.$d.'&nbsp;'.$this->months['nl'][$mo];
+            }
+        }
+        
+        $rtrn = '<strong>'.$data['title'].': </strong>'.implode( ' & ', $arrDates);
+        return $rtrn;
+        
     }
 }
 ?>
