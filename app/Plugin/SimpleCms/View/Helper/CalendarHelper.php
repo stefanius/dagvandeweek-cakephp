@@ -143,6 +143,7 @@ class CalendarHelper extends AppHelper {
         if($month < 10){
             $month = '0'.(string)$month;
         }
+        $rows=0;
         $month=(string)$month;
         $rtrn='<div class="calendar-wrapper">';
         $title =  str_replace(array('#YEAR#', '#MONTH#'), array($year,$this->months[$this->lang][$month]), $this->title);
@@ -203,16 +204,20 @@ class CalendarHelper extends AppHelper {
 
             $rtrn.=  '</td>';
 
-            if($weekday == 0)
+            if($weekday == 0 || count($days)==$day)
             {
                 if($this->weeknumberAfter){
                     $rtrn.='<td class="weeknumber">'.$weeknumber.'</td>';
                 }
  
                 $rtrn.=  '</tr>';
+                $rows++;
             }    
         }
-        
+        while($rows < 6){
+            $rtrn.=  '<tr><td></td></tr>';
+            $rows++;
+        }
         $rtrn.=  '</table>';    
         $rtrn.=  '</div>';
         

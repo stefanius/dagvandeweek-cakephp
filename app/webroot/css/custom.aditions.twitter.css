@@ -79,7 +79,8 @@ div.calendar-wrapper h2{
 }
 
 div.calendar-wrapper{
-    width: 20em;  
+    width: 20em; 
+    background-color: rgba(255,0,0,0.05);
 }
 
 input{
