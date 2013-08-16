@@ -110,8 +110,7 @@ div.calendar-wrapper td.today {
 ul.calendar-container li{
     font-size: 90%;
     display:inline-block;
-    padding-bottom: 500em;
-    margin-bottom: -500em;
+    padding-right: 3em;
     
 }
 ul.calendar-container {
