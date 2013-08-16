@@ -1,7 +1,7 @@
 <h3>Bijzondere Dagen</h3>
 <?php
 
-$dataArr[5]['year']=2013;
+$dataArr[5]['year']=$year;
 $dataArr[5]['month']=array(12);
 $dataArr[5]['day']=array(24,25);
 $dataArr[5]['title']='Kerst';

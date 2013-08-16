@@ -235,7 +235,7 @@ class CalendarHelper extends AppHelper {
                 $weekday=(int)$weekday;
                 $weekday='0'.$weekday;
                 
-                if($m < 10){
+                if($m < 10 && strlen($m)==1){
                     $mo=(int)$m;
                     $mo='0'.$m;
                 }else{
@@ -244,7 +244,7 @@ class CalendarHelper extends AppHelper {
                 $arrDates[] = $this->days['nl'][$weekday].'&nbsp;'.$d.'&nbsp;'.$this->months['nl'][$mo];
             }
         }
-        
+       
         $rtrn = '<dt>'.$data['title'].': </dt><dd>'.implode( ' & ', $arrDates).'</dd>';
         return $rtrn;
         
@@ -252,11 +252,56 @@ class CalendarHelper extends AppHelper {
     
     function generateTextBlock($data){
         $rtrn='';
+        $year=0;
         foreach($data as $d){
+            $year=$d['year'];
             $rtrn.=$this->generateTextLine($d);
         }
+        $summerwinter = $this->summerWinterTime($year);
         
+        foreach($summerwinter as $d){
+            $rtrn.=$this->generateTextLine($d);
+        }        
         return '<dl>'.$rtrn.'</dl>';
+    }
+    
+    function summerWinterTime($year){
+        //de zomertijd begint op de laatste zondag van maart, 
+        //en eindigt op de laatste zondag van oktober
+        //vanaf 2002
+        
+        if($year < 2002){
+            return array();
+        }
+        $summertime=array();
+        $wintertime=array();
+        
+        $summertime['month']='03';
+        $wintertime['month']='10';
+        
+        for($i=1;$i<32;$i++){
+            $summerday = date('w', mktime(0,0,0,$summertime['month'],$i,$year));
+            $winterday = date('w', mktime(0,0,0,$wintertime['month'],$i,$year));
+            
+            if($summerday==0){
+                $summertime['day']=$i;
+            }
+
+            if($winterday==0){
+                $wintertime['day']=$i;
+            }
+        }
+        
+        $summertime['month'] = array($summertime['month']);
+        $summertime['day'] = array($summertime['day']);
+        $summertime['year'] =$year;
+        $summertime['title'] ='Zomertijd';
+        
+        $wintertime['month'] = array($wintertime['month']);
+        $wintertime['day'] = array($wintertime['day']);
+        $wintertime['year'] =$year;
+        $wintertime['title'] ='Wintertijd';
+        return array($summertime,$wintertime);
     }
 }
 ?>
