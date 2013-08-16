@@ -245,9 +245,18 @@ class CalendarHelper extends AppHelper {
             }
         }
         
-        $rtrn = '<strong>'.$data['title'].': </strong>'.implode( ' & ', $arrDates);
+        $rtrn = '<dt>'.$data['title'].': </dt><dd>'.implode( ' & ', $arrDates).'</dd>';
         return $rtrn;
         
+    }
+    
+    function generateTextBlock($data){
+        $rtrn='';
+        foreach($data as $d){
+            $rtrn.=$this->generateTextLine($d);
+        }
+        
+        return '<dl>'.$rtrn.'</dl>';
     }
 }
 ?>

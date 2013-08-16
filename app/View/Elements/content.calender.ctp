@@ -1,7 +1,7 @@
 	        <div class="row-fluid">
                     
 	            <div class="span2">
-
+                           <?php echo $this->element('calendartext'); ?>
 	            </div><!--/span-->
 
                     <div id="main-content" class="span7">                       
