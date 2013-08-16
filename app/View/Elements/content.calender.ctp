@@ -6,8 +6,10 @@
 
                     <div id="main-content" class="span7">                       
                         <?php echo $this->Session->flash(); ?>
+                        <article>
+                            <?php echo $this->fetch('content'); ?>
+                        </article>
 
-                        <?php echo $this->fetch('content'); ?>
   
                     </div><!--/span-->
                     
