@@ -1,7 +1,7 @@
 	        <div class="row-fluid">
                     
 	            <div class="span2">
-                           <?php echo $this->element('calendartext'); ?>
+                           
 	            </div><!--/span-->
 
                     <div id="main-content" class="span7">                       
@@ -10,26 +10,31 @@
                             <?php echo $this->fetch('content'); ?>
                         </article>
 
+                        <h3>Selecteer uw Jaarkalender</h3>
+                        
+                        <?php if(isset($year)): ?>
+                            <p>Als u klaar bent met de Kalender van <?php echo $year ?> is het de overweging waard om ook eens te kijken naar onze andere kalenders. Naast het jaar <?php echo $year ?> zijn er genoeg andere kalenders die wij aanbieden. Elk jaar opnieuw.</p>
+                        <?php endif; ?>
+                        <ul>
+                        <?php
+                            if(isset($year)){
+                                $minYear = $year-10;
+                                $maxYear = $year+10;
+                                $years = range($minYear,$maxYear);  
+
+                                foreach($years as $yr){ 
+                                    if($yr > 1500 && $yr < 2020){
+                                        echo '<li class="inline">'.$this->Html->link('Kalender '.$yr , '/kalender/'.$yr, array('rel'=>'follow')).'</li>';
+                                    }                                
+                                }
+                            }
+                        ?>
+                        </ul>                        
   
                     </div><!--/span-->
                     
 	            <div class="span2 hidden-phone">
-                        <div id="calender-years" class="well sidebar-nav">
-                            <ul>
-                            <?php
-                                if(isset($year)){
-                                    $minYear = $year-5;
-                                    $maxYear = $year+5;
-                                    $years = range($minYear,$maxYear);  
-                                    
-                                    foreach($years as $yr){ 
-                                        if($yr > 1500 && $yr < 2020){
-                                            echo '<li>'.$this->Html->link('Kalender '.$yr , '/kalender/'.$yr, array('rel'=>'follow')).'</li>';
-                                        }                                
-                                    }
-                                }
-                            ?>
-                            </ul>
-                        </div>
+                        <?php echo $this->element('calendartext'); ?>
+
                     </div>
 	        </div><!--/row-->
