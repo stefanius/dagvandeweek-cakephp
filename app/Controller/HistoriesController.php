@@ -124,6 +124,7 @@ class HistoriesController extends AppController {
             $canonical = '/historie';
             $months=$this->Months();
             $singleitem = false;
+            $metadata=array();
             
             if(!is_null($year)){
                 if(strlen($year)==4){
@@ -178,7 +179,8 @@ class HistoriesController extends AppController {
                 );   
                 
                 $History = $this->History->find('all', $filter);
-                $this->set('description', 'Wat gebeurde er in een bepaald jaar? Zoek het hier uit en neem een kijkje in het verleden op Dag Van De Week!');
+                $metadata['description']='Wat gebeurde er in een bepaald jaar? Zoek het hier uit en neem een kijkje in het verleden op Dag Van De Week!';
+                $this->set('metadata', $metadata );
                 $this->set('History', $History);
                 $this->set('title_for_layout', 'DagVanDeWeek Vandaag in het Verleden - Historisch Jaaroverzicht');
                 $this->set('pagetitle', 'Vandaag in het Verleden - Historisch Jaaroverzicht');
@@ -187,7 +189,8 @@ class HistoriesController extends AppController {
                 if($singleitem==true){
                     $History = $this->History->find('first', $filter);
                     $this->set('title_for_layout', $History['History']['title']);
-                    $this->set('description',  substr( $History['History']['pagecontent'], 0,159));
+                    $metadata['description']= substr( $History['History']['pagecontent'], 0,159);
+                    $this->set('metadata', $metadata);
                     $this->set(compact('History','months',  'day', 'month', 'year'));
                 }else{
                     $History = $this->History->find('all', $filter);
@@ -201,8 +204,11 @@ class HistoriesController extends AppController {
                         $pagetitle = 'Wat gebeurde er in het jaar '.$conditions['History.year'];
                         $description = 'Lees hier alles uit '.$conditions['History.year'].'! Het nieuws en de geschiedenis van '.$conditions['History.year'].'! Lees alles op Dag Van De Week. Ook voor het jaar  '.$conditions['History.year'];
                     }
+                    $metadata['description']=$description;
+                    $metadata['canonical'] =$canonical;
+                    
                     $this->set('title_for_layout', $pagetitle);
-                    $this->set(compact('History', 'pagetitle', 'description', 'canonical', 'months', 'day', 'month', 'year'));
+                    $this->set(compact('History', 'pagetitle', 'metadata', 'months', 'day', 'month', 'year'));
                     $this->render('viewdateindex');              
                 }                
             }
