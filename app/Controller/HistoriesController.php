@@ -222,14 +222,14 @@ class HistoriesController extends AppController {
             
             
             if(is_null($year)){
-                $description = 'Elke Dag Van De Week is er een verleden. Van elk jaar een kalender op Dag Van De Week. Ontdek de historie en bekijk oude Kalenders op Dag Van De Week.';
+                $metadata['description'] = 'Elke Dag Van De Week is er een verleden. Van elk jaar een kalender op Dag Van De Week. Ontdek de historie en bekijk oude Kalenders op Dag Van De Week.';
                 
                 $filter = array(
                     'fields' => array('DISTINCT (History.year)'),
                     'order' => array('History.created DESC')
                 );
                 $Years = $this->History->find('all', $filter);
-                $this->set(compact('Years', 'description'));
+                $this->set(compact('Years', 'metadata'));
                 $this->set('title_for_layout', 'Kalender Overzicht');
                 $this->render('calenderindex'); 
             }else{
@@ -250,9 +250,9 @@ class HistoriesController extends AppController {
                         $Yearinfo=$History;
                     }
                 }
-                $description = $year . ' was een TOP jaar! Hier vindt u de kalender van '.$year.'. Op Dag Van De Week kunt u ook kijken naar de geschiedenis uit '.$year.'! Bekijk hier de Kalender '.$year;
+                $metadata['description'] = $year . ' was een TOP jaar! Hier vindt u de kalender van '.$year.'. Op Dag Van De Week kunt u ook kijken naar de geschiedenis uit '.$year.'! Bekijk hier de Kalender '.$year;
                 $this->set('title_for_layout', 'Kalender '.$year);
-                $this->set(compact('year','pastDays', 'description', 'Yearinfo'));
+                $this->set(compact('year','pastDays', 'metadata', 'Yearinfo'));
                 $this->layout = 'default.calender';                
             }
         }
