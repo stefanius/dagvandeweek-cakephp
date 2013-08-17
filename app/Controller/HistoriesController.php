@@ -179,7 +179,7 @@ class HistoriesController extends AppController {
                 );   
                 
                 $History = $this->History->find('all', $filter);
-                $metadata['description']='Wat gebeurde er in een bepaald jaar? Zoek het hier uit en neem een kijkje in het verleden op Dag Van De Week!';
+                $metadata['description']='Wat gebeurde er in een bepaald jaar? Zoek het hier uit en neem een kijkje in het verleden op Dag Van De Week! De geschiedenis van Jaar tot Jaar bij elkaar!';
                 $this->set('metadata', $metadata );
                 $this->set('History', $History);
                 $this->set('title_for_layout', 'DagVanDeWeek Vandaag in het Verleden - Historisch Jaaroverzicht');
