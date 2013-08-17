@@ -50,7 +50,18 @@
 </ul>
 
 <ul class="nav nav-list">
-    <li class="nav-header">Kalender</li>
+    <li class="nav-header">Eerste Wereldoorlog</li>
+    <li><?php echo $this->Html->link('1914', '/kalender/1914'); ?></li>
+    <li><?php echo $this->Html->link('1915', '/kalender/1915'); ?></li>
+    <li><?php echo $this->Html->link('1916', '/kalender/1916'); ?></li>
+    <li><?php echo $this->Html->link('1917', '/kalender/1917'); ?></li>
+    <li><?php echo $this->Html->link('1918', '/kalender/1918'); ?></li>
+    <li><?php echo $this->Html->link('1920', '/kalender/1920'); ?></li>
+    <li><?php echo $this->Html->link('1921', '/kalender/1921'); ?></li>
+</ul>
+
+<ul class="nav nav-list">
+    <li class="nav-header">Tweede Wereldoorlog</li>
     <li><?php echo $this->Html->link('1945', '/kalender/1945'); ?></li>
     <li><?php echo $this->Html->link('1944', '/kalender/1944'); ?></li>
     <li><?php echo $this->Html->link('1943', '/kalender/1943'); ?></li>
