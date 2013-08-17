@@ -239,7 +239,7 @@ class HistoriesController extends AppController {
                         $Yearinfo=$History;
                     }
                 }
-                $description = $year . ' was een TOP jaar! Hier vindt u de kalender van '.$year.'. Op Dag Van De Week kunt u ook kijken naar de historische details uit '.$year.'!';
+                $description = $year . ' was een TOP jaar! Hier vindt u de kalender van '.$year.'. Op Dag Van De Week kunt u ook kijken naar de geschiedenis uit '.$year.'! Bekijk hier de Kalender '.$year;
                 $this->set('title_for_layout', 'Kalender '.$year);
                 $this->set(compact('year','pastDays', 'description', 'Yearinfo'));
                 $this->layout = 'default.calender';                
