@@ -210,6 +210,11 @@ class HistoriesController extends AppController {
         
         public function calender($year=null){
             
+            if(!is_null($year) && ($year < 1000 || $year > 2036) ){
+                $this->redirect('/kalender', 301);
+            }
+            
+            
             if(is_null($year)){
                 $description = 'Elke Dag Van De Week is er een verleden. Van elk jaar een kalender op Dag Van De Week. Ontdek de historie en bekijk oude Kalenders op Dag Van De Week.';
                 
