@@ -76,6 +76,8 @@ class PagesController extends AppController {
                 
                 if($title_for_layout==='Home'){
                     $title_for_layout = 'Welkom - DagVanDeWeek.nl';
+                    $metadata['description'] = 'Van elk jaar kalanders. Elke maand in beeld. Op DagVanDeWeek leest u alles over gisteren en vandaag. Alles overzichtelijk in een Jaarkalender bijelkaar!';
+                    $this->set(compact('metadata'));
                 }
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
 		$this->render(implode('/', $path));
