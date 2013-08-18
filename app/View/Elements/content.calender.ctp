@@ -14,6 +14,12 @@
                         
                         <?php if(isset($year)): ?>
                             <p>Als u klaar bent met de Kalender van <?php echo $year ?> is het de overweging waard om ook eens te kijken naar onze andere kalenders. Naast het jaar <?php echo $year ?> zijn er genoeg andere kalenders die wij aanbieden. Elk jaar opnieuw.</p>
+                        
+                            <?php if($year==365): ?>
+                                <p>Na de kalender 365 kunnen wij u vast overtuigen om ook naar de kalender van 1900, 1950, 2013 of zelfs 2015 te komen kijken. Natuurlijk willen wij wel alles over alle jaren weten, maar samen weten we natuurlijk meer. Dus als u iets weet uit het jaar 365, 1365, 1965 of welk jaar dan ook, willen wij dat weten! Zodat onze kalender 365, kalender 1900 en kalender 2013 completer wordt.</p>
+                            <?php endif; ?>
+                            
+                            
                         <?php endif; ?>
                         <ul>
                         <?php
