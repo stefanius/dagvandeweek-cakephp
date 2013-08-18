@@ -54,6 +54,10 @@
         Router::connect('/users/logout', array('plugin'=>'simple_cms', 'controller' => 'users', 'action' => 'logout'));
         Router::connect('/users/index', array('plugin'=>'simple_cms', 'controller' => 'users', 'action' => 'index'));
         Router::connect('/users/add', array('plugin'=>'simple_cms', 'controller' => 'users', 'action' => 'add'));
+        
+        Router::connect('/histories', array('controller' => 'histories', 'action' => 'index'));
+        Router::connect('/histories/index', array('controller' => 'histories', 'action' => 'index'));
+        Router::connect('/histories/add', array('controller' => 'histories', 'action' => 'add'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

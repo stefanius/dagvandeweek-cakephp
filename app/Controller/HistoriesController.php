@@ -216,7 +216,7 @@ class HistoriesController extends AppController {
         
         public function calender($year=null){
             
-            if(!is_null($year) && ($year < 1000 || $year > 2036) ){
+            if(!is_null($year) && ($year < 1000 || $year > 2036) && $year != 365 ){
                 $this->redirect('/kalender', 301);
             }
             
