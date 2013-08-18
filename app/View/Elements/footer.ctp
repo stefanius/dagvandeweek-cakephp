@@ -25,6 +25,7 @@
     <li><?php echo $this->Html->link('1980', '/historie/1980'); ?></li>
     <li><?php echo $this->Html->link('2000', '/historie/2000'); ?></li>
     <li><?php echo $this->Html->link('2001', '/historie/2001'); ?></li>
+    <li><?php echo $this->Html->link('365', '/kalender/365'); ?></li>
 </ul>
 
 <ul class="nav nav-list">
