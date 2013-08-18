@@ -18,9 +18,17 @@
                         <ul>
                         <?php
                             if(isset($year)){
-                                $minYear = $year-10;
-                                $maxYear = $year+10;
-                                $years = range($minYear,$maxYear);  
+                                
+                                if($year==365){
+                                    $years=array();
+                                    for($i=1900;$i<2006;$i+=5){
+                                        $years[]=$i;
+                                    }
+                                }else{
+                                    $minYear = $year-10;
+                                    $maxYear = $year+10;
+                                    $years = range($minYear,$maxYear);                                    
+                                }
 
                                 foreach($years as $yr){ 
                                     if($yr > 1500 && $yr < 2020){
