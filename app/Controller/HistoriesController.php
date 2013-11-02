@@ -205,7 +205,7 @@ class HistoriesController extends AppController {
                         $description = 'Lees hier alles uit '.$conditions['History.year'].'! Het nieuws en de geschiedenis van '.$conditions['History.year'].'! Lees alles op Dag Van De Week. Ook voor het jaar  '.$conditions['History.year'];
                     }
                     $metadata['description']=$description;
-                    $metadata['canonical'] =$canonical;
+                  //  $metadata['canonical'] =$canonical;
                     
                     $this->set('title_for_layout', $pagetitle);
                     $this->set(compact('History', 'pagetitle', 'metadata', 'months', 'day', 'month', 'year'));
