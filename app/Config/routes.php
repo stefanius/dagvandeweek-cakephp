@@ -45,7 +45,7 @@
         Router::connect('/ishetvandaag/donderdag', array('controller' => 'checkday', 'action' => 'weekday', '4'));
         Router::connect('/ishetvandaag/vrijdag', array('controller' => 'checkday', 'action' => 'weekday', '5'));
         Router::connect('/ishetvandaag/zaterdag', array('controller' => 'checkday', 'action' => 'weekday', '6'));
-	Router::connect('/ishetvandaag/zondag', array('controller' => 'checkday', 'action' => 'weekday', '7'));
+	    Router::connect('/ishetvandaag/zondag', array('controller' => 'checkday', 'action' => 'weekday', '7'));
         Router::connect('/ishetvandaag/vandaag', array('controller' => 'checkday', 'action' => 'weekday', '8'));
         Router::connect('/ishetvandaag/gisteren', array('controller' => 'checkday', 'action' => 'weekday', '9'));
         Router::connect('/ishetvandaag/morgen', array('controller' => 'checkday', 'action' => 'weekday', '10'));
@@ -54,6 +54,14 @@
         Router::connect('/users/logout', array('plugin'=>'simple_cms', 'controller' => 'users', 'action' => 'logout'));
         Router::connect('/users/index', array('plugin'=>'simple_cms', 'controller' => 'users', 'action' => 'index'));
         Router::connect('/users/add', array('plugin'=>'simple_cms', 'controller' => 'users', 'action' => 'add'));
+
+        
+        Router::connect('/wikilistitems', array('controller' => 'wikilistitems', 'action' => 'index'));
+        Router::connect('/wikilistitems/index', array('controller' => 'wikilistitems', 'action' => 'index'));
+        Router::connect('/wikilistitems/add', array('controller' => 'wikilistitems', 'action' => 'add'));
+        Router::connect('/wikilistitems/delete', array('controller' => 'wikilistitems', 'action' => 'delete'));
+        Router::connect('/wikilistitems/view', array('controller' => 'wikilistitems', 'action' => 'view'));
+        Router::connect('/wikilistitems/newhistorie', array('controller' => 'wikilistitems', 'action' => 'newhistorie'));
         
         Router::connect('/histories', array('controller' => 'histories', 'action' => 'index'));
         Router::connect('/histories/index', array('controller' => 'histories', 'action' => 'index'));
